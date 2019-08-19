@@ -24,4 +24,21 @@ public class UserServiceImplTest {
     public void register() {
         userService.register("qwer","123456","123456789");
     }
+
+    @Test
+    public void login() {
+        userService.login("qwer","123456");
+    }
+
+    @Test
+    public void queryOne() {
+    }
+
+    @Test
+    public void updatePassword() {
+    }
+
+    @Test
+    public void update() {
+    }
 }

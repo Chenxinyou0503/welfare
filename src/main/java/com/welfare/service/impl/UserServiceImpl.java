@@ -35,9 +35,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserEntity login(String username, String password) {
-        UserEntity param = new UserEntity();
-        param.setUsername(username);
-        UserEntity entity = userDao.selectOne(param);
+
+        UserEntity entity = userDao.queryOne(username);
         if (StringUtils.isEmpty(entity)) {
             return null;
         }
@@ -50,5 +49,15 @@ public class UserServiceImpl implements UserService {
         param.setUsername(username);
         UserEntity entity = userDao.selectOne(param);
         return entity;
+    }
+
+    @Override
+    public String updatePassword(String username, String password, String newPassword) {
+        return null;
+    }
+
+    @Override
+    public void update(UserEntity userEntity) {
+
     }
 }

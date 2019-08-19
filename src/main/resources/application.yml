@@ -13,12 +13,14 @@ spring:
   thymeleaf:
     prefix: classpath:/templates/
 
+logging.level.com.welfare.dao:
+  debug
 mapper:
   mappers:
   - com.welfare.MyMapper
   not-empty: false
   identity: MYSQL
-  hel
+
 pagehelper:
   helper-dialect: mysql
   reasonable: true

@@ -18,3 +18,9 @@ mapper:
   - com.welfare.MyMapper
   not-empty: false
   identity: MYSQL
+  hel
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql

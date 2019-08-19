@@ -1,5 +1,9 @@
 package com.welfare.service;
 
+import com.welfare.entity.WelfareLogEntity;
+
+import java.util.List;
+
 /**
  * @Author ：chenxinyou.
  * @Title :
@@ -7,4 +11,7 @@ package com.welfare.service;
  * @Description:
  */
 public interface WelfareLogService {
+
+    public List<WelfareLogEntity> selectListByWelfareId(String welfareId);
+
 }

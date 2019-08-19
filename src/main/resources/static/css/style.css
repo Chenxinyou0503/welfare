@@ -1,0 +1,283 @@
+.floatleft {float:left}
+.floatright {float:right}
+.alignleft {float:left;margin-right:15px;}
+.alignright {float:right;margin-left:15px;}
+.aligncenter {display:block;margin:0 auto 15px}
+a:focus {outline:0px solid}
+img {max-width:100%;height:auto}
+.fix {overflow:hidden}
+h1, h2, h3, h4, h5, h6 {margin:0 0 15px;font-family: 'Bitter', serif;color: #222;font-weight: 700}
+body {font-family: 'Open Sans', sans-serif;}
+a:hover {color: #6fb42a}
+.logo h1 {
+  font-size: 30px;
+  margin: 0;
+  padding: 25px 0;font-weight: 700
+}
+
+.logo h1 a {color: #222}
+
+.mainmenu {font-family: 'Bitter', serif;}
+
+.mainmenu .navbar-nav li a {color: #222;
+font-size: 15px;
+font-weight: 700;
+padding: 32px 15px;}
+
+.mainmenu .navbar-nav li:hover a {color: #fff;}
+
+.section-padding {padding: 100px 0}
+
+#slider {
+  background: none repeat scroll 0 0 #f7f7f7;
+}
+
+.slider-text {font-size: 16px;color: #aaaaaa}
+.slider-text h2{font-size: 35px;font-weight: 700;margin-bottom: 30px}
+
+.newsletter-form {margin-top: 30px}
+.newsletter-form input[type=email]{border: 1px solid #DADADA;padding: 10px;width: 300px;margin-right: 10px}
+.newsletter-form input[type=submit]{border: none;padding: 11px;color: #fff;text-transform: uppercase}
+.newsletter-form input[type=submit]:hover{background-color: #222}
+
+.page-title {
+  border-left: 5px solid;
+  margin-bottom: 50px;
+  padding-left: 20px;color: #aaa
+}
+
+.page-title h2{font-size: 35px;margin-bottom: 10px}
+
+
+.project-preview {
+    position: relative;overflow: hidden
+}
+.project-meta {
+    background: none repeat scroll 0 0 #404040;
+    border-radius: 5px;
+    bottom: -25%;
+    color: #fff;
+    font-size: 12px;
+    left: 0;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    overflow: hidden;
+    position: absolute;
+    width: 96%;transition: .3s
+}
+.single-project:hover .project-meta{bottom: 0}
+.project-meta p {
+    margin: 0;
+}
+.project-date {
+    float: left;
+}
+.project-count {
+    float: right;
+}
+.project-count p {
+    float: left;
+    padding: 15px;
+}
+.project-date p {
+    padding: 15px;
+}
+.single-project {
+    margin-bottom: 50px;
+}
+.project-link {
+    padding: 15px;
+    position: relative;
+}
+.project-link h2 {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.project-link a {
+    color: #333;
+}
+.project-link p {
+    color: #aaa;
+    margin: 0;
+}
+.tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
+.project-link a.project-detail {
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 25px;
+    height: 30px;
+    line-height: 27px;
+    margin-top: -15px;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 50%;
+    width: 30px;
+}
+.more-link {
+    color: #fff;
+    display: inline-block;
+    padding: 10px 45px 10px 20px;
+    position: relative;
+    text-transform: uppercase;
+}
+.more-link i {
+    font-size: 23px;
+    margin-left: 15px;
+    position: absolute;
+    right: 19px;
+    top: 7px;
+}
+
+.more-link:hover {background-color: #222;text-decoration: none;color: #fff}
+
+.project-link:hover a.project-detail {background-color: #222}
+
+#call-to-action {
+  background: none repeat scroll 0 0 #f7f7f7;font-size: 16px;color: #aaa
+}
+
+#call-to-action p {margin: 30px 0}
+
+
+.single-post {
+    margin-bottom: 50px;
+}
+.post-thumb {
+    margin-right: 35px;
+    width: 230px;
+}
+.single-post a {
+    color: #222;
+}
+.single-post h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.post-meta {
+    color: #aaa;
+    font-size: 14px;margin-bottom: 25px;
+}
+
+.single-post a.read-more {display: inline-block;
+font-family: "Bitter",serif;
+font-weight: 700;
+margin-top: 10px;
+padding: 1px 30px 3px 36px;
+position: relative;}
+
+.single-post a.read-more i {
+  border: 1px solid #222;
+  border-radius: 50%;
+  font-size: 18px;
+  height: 25px;
+  left: 0;
+  line-height: 21px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 25px;
+}
+
+a.read-more:hover {text-decoration: none}
+
+#footer-top {
+  background: none repeat scroll 0 0 #222222;
+  color: #fff;
+}
+
+#footer-top .more-link:hover {background-color: #fff;color: #222}
+
+.footer-left {
+  overflow: hidden;
+} 
+
+#footer-top h2 {
+  color: #fff;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.shop-content img {
+  float: left;
+  margin-right: 30px;
+  width: 150px;
+}
+
+.shop-content .more-link i{top: 4px}
+.shop-content .more-link {
+  margin-top: 10px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
+
+.footer-area {
+    background: none repeat scroll 0 0 #000;
+    color: #fff;
+    font-family: 'Bitter', serif;
+    font-size: 12px;padding: 20px 0
+}
+.footer-menu ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+.footer-menu ul li {
+    display: inline-block;
+}
+.footer-menu ul li a {
+    color: #fff;
+    display: block;
+    padding: 20px 30px 20px 0;
+}
+.footer-menu {
+}
+.social-icons a {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 50%;
+    color: #000;
+    display: inline-block;
+    font-size: 18px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 5px;
+    text-align: center;
+    width: 30px;
+}
+.social-icons a:hover {color: #fff}
+.social-icons {
+    margin-top: 15px;
+    text-align: center;
+}
+.copyright-text {
+    margin-top: 12px;
+    text-align: right;
+}
+
+
+
+#tweet ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+#tweet li {
+    padding-left: 40px;
+    position: relative;margin-bottom: 30px;
+}
+#tweet li i.fa-twitter {
+    font-size: 25px;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+
+/* Colors CSS */
+
+a, a.read-more:hover, a.read-more:hover i {color:#8ACA4A}
+.page-title, a.read-more:hover i {border-color:#8ACA4A}
+.social-icons a:hover, .mainmenu .navbar-nav li:hover a, .newsletter-form input[type=submit], .project-link a.project-detail, .more-link {background-color:#8ACA4A}

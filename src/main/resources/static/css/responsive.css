@@ -1,0 +1,118 @@
+/* Medium Layout: 1280px. */
+
+@media only screen and (min-width: 992px) and (max-width: 1280px) { 
+.newsletter-form input[type="email"] {
+  width: 260px;
+}
+.project-count p, .project-date p {padding: 10px}    
+.footer-menu ul li a {
+  padding: 20px 20px 20px 0;
+}    
+}
+
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.logo h1 {
+  font-size: 24px;    
+  padding: 15px 0;
+  text-align: center;
+}
+.mainmenu .navbar-right {
+  float: none !important;
+  text-align: center;
+} 
+.mainmenu .navbar-nav li {
+  display: inline-block;
+  float: none;
+}  
+.section-padding {
+  padding: 50px 0;
+}    
+.slider-text {
+  margin-bottom: 50px;
+  text-align: center;
+} 
+.post-meta {
+  margin-bottom: 15px;
+}  
+    
+.footer-left {
+  margin-bottom: 50px;
+} 
+.footer-menu ul {
+  text-align: center;
+} 
+.copyright-text {
+  margin-top: 30px;
+  text-align: center;
+}    
+
+}
+
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+
+.logo h1 {
+  font-size: 25px;
+  padding: 15px 0;
+  text-align: center;
+} 
+.navbar-header {
+  text-align: center;
+}
+.navbar-toggle {
+  border-color: #222;float: none;margin-right: 0
+} 
+.navbar-toggle .icon-bar {background-color: #222}    
+.section-padding {
+  padding: 50px 0;
+}
+.slider-text h2, .cta-text h2 {
+  font-size: 25px;
+  line-height: 35px;
+} 
+.newsletter-form input[type="email"] {
+  width: 200px;
+}    
+  .slider-text, .footer-left {margin-bottom: 30px}
+    
+    
+.project-count p, .project-date p {padding: 10px}   
+    
+.post-thumb {
+  margin-bottom: 20px;
+  width: inherit;
+}  
+.footer-menu ul li a {
+  padding: 10px 10px 10px 0;
+}    
+.footer-menu ul {
+  text-align: center;
+}  
+.copyright-text {
+  margin-top: 20px;
+  text-align: center;
+} 
+.shop-content img {
+  margin-right: 20px;
+  width: 130px;
+}   
+.mainmenu .navbar-nav li a {
+  padding: 15px;border-bottom: 1px solid #ddd
+}    
+    
+}
+
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+
+}

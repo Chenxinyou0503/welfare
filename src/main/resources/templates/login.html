@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Lowin</title>
+	<link rel="stylesheet" href="../static/css/auth.css">
+
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="../static/js/login.js"></script>
+	<div class="lowin">
+		<div class="lowin-brand">
+			<img src="../static/jpg/kodinger.jpg" alt="logo">
+		</div>
+		<div class="lowin-wrapper">
+			<div class="lowin-box lowin-login">
+				<div class="lowin-box-inner">
+					<form id="loginForm">
+						<p>登录</p>
+						<div class="lowin-group">
+							<label>用户名 <a href="#" class="login-back-link">登录?</a></label>
+							<input type="text" autocomplete="username" name="username" class="lowin-input">
+						</div>
+						<div class="lowin-group password-group">
+							<label>密码 <a href="#" class="forgot-link">忘记密码?</a></label>
+							<input type="password" name="password" autocomplete="current-password" class="lowin-input">
+						</div>
+						<button class="lowin-btn login-btn" onclick="login()">
+							登录
+						</button>
+
+						<div class="text-foot">
+							还没有账户？ <a href="" class="register-link">注册</a>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="lowin-box lowin-register">
+				<div class="lowin-box-inner">
+						<p>创建你的账户</p>
+						<div class="lowin-group">
+							<label>用户名</label>
+							<input type="text" name="nameR" autocomplete="nameR" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>手机号</label>
+							<input type="phone" autocomplete="phoneR" name="phoneR" class="lowin-input">
+						</div>
+						<div class="lowin-group">
+							<label>密码</label>
+							<input type="password" name="passwordR" autocomplete="current-password" class="lowin-input">
+						</div>
+						<button class="lowin-btn" onclick = "register();">
+							注册
+						</button>
+
+						<div class="text-foot">
+							已有账号? <a href="" class="login-link">登录</a>
+						</div>
+				</div>
+			</div>
+		</div>
+	
+		<footer class="lowin-footer">
+		</footer>
+	</div>
+
+	<script src="../static/js/auth.js"></script>
+
+	<script>
+		Auth.init({
+			login_url: '#login',
+			forgot_url: '#forgot'
+		});
+	</script>
+</body>
+</html>

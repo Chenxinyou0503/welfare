@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Expand - Minimal HTML Template</title>
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Bootstrap CSS form CDN -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    </head>
+    
+    <body>
+
+
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="logo">
+                        <h1><a href="">公益互助平台</a></h1>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="mainmenu">
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="current"><a href="/">爱心首页</a></li>
+                                <li><a href="#">捐献爱心</a></li>
+                                <li><a href="#">关于</a></li>
+                                <li><a href="/login">登录</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End header area -->
+    
+
+    <div id="projects" class="section-padding">
+        <div class="container">
+
+            <div class="row" th:each="entity:${entity}">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-1.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p th:text="${entity.createTime}"></p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p th:text="${entity.id}"><i class="fa fa-money"></i> 238</p>
+                                    <p><i class="fa fa-jpy"></i> 20</p>
+                                    <p><i class="fa fa-plus-square"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2 ><a href="" th:text="${entity.welfareTitle}"></a></h2>
+                            <p th:text="${entity.tag}"></p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-2.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Expand - html5 template</a></h2>
+                            <p>HTML, CSS</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-3.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Icon - Landing page</a></h2>
+                            <p>HTML, CSS, Landing page</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-4.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Expand filter</a></h2>
+                            <p>WP Plugin</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-5.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Expand accordion</a></h2>
+                            <p>WP Plugin</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-6.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Beautiful paypal buttons</a></h2>
+                            <p>WP Plugin</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="" class="more-link">More Freebies <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End projects -->
+    
+    <div id="call-to-action" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="cta-text">
+                        <h2>Add your awesome call to action title here</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum iste tempora assumenda facilis beatae consectetur dolorem dolores, illo quisquam perferendis aliquam fuga, at est porro eos id rem modi libero!</p>
+                        <a href="" class="more-link">More Freebies <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End call to action -->
+    
+    <div id="latest-news" class="section-padding">
+        <div class="container">
+                       
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="single-post">
+                        <img src="../static/img/img-7.jpg" alt="" class="post-thumb alignleft">
+                        <h2><a href="">Should You Buy The New Flat-Panel iMac?</a></h2>
+                        <p class="post-meta">Posted on July 28, 2013 <span>&bull;</span> James Reed <span>&bull;</span> Technology</p>
+                        <div class="post-excerpt">
+                            <p>The new iMac is so amazingly thin, and it still maintains its stunning good looks. It’s beefed up with the third generation quad-core i5/ i7 Ivy Bridge processors, so it’s powerful enough handle anything you can throw at it. </p>
+                        </div>
+                        
+                        <a href="" class="read-more"><i class="fa fa-angle-right"></i> Read More</a>
+                    </div>
+                    <div class="single-post">
+                        <img src="../static/img/img-8.jpg" alt="" class="post-thumb alignleft">
+                        <h2><a href="">How to use html5 template in web server</a></h2>
+                        <p class="post-meta">Posted on July 28, 2013 <span>&bull;</span> James Reed <span>&bull;</span> Technology</p>
+                        <div class="post-excerpt">
+                            <p>The new iMac is so amazingly thin, and it still maintains its stunning good looks. It’s beefed up with the third generation quad-core i5/ i7 Ivy Bridge processors, so it’s powerful enough handle anything you can throw at it. </p>
+                        </div>
+                        
+                        <a href="" class="read-more"><i class="fa fa-angle-right"></i> Read More</a>
+                    </div>
+                    <div class="single-post">
+                        <img src="../static/img/img-9.jpg" alt="" class="post-thumb alignleft">
+                        <h2><a href="">Joomla or WordPress, which one is best?</a></h2>
+                        <p class="post-meta">Posted on July 28, 2013 <span>&bull;</span> James Reed <span>&bull;</span> Technology</p>
+                        <div class="post-excerpt">
+                            <p>The new iMac is so amazingly thin, and it still maintains its stunning good looks. It’s beefed up with the third generation quad-core i5/ i7 Ivy Bridge processors, so it’s powerful enough handle anything you can throw at it. </p>
+                        </div>
+                        
+                        <a href="" class="read-more"><i class="fa fa-angle-right"></i> Read More</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="" class="more-link">More blogs <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>            
+        </div>
+    </div> <!-- End latest news -->
+    
+    <div id="footer-top" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="footer-left">
+                        <h2>Visit Our Shop</h2>
+                        <div class="shop-content">
+                            <img src="../static/img/img-11.jpg" alt="">
+                            <p>Grab some of our premium templates, icons, and graphics from our store. We strive to bring you the highest quality digital products. </p>
+                            <a href="" class="more-link">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="latest-tweets">
+                        <h2>Latest tweets</h2>
+                        <div id="tweet"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- End footer top -->
+    
+    <div class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Archive</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> <!-- End footer bottom -->
+    
+
+    <!-- jQuery form CDN -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    </body>
+</html>

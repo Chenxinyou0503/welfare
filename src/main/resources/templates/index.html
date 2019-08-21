@@ -7,36 +7,20 @@
 	  
 	    <title>爱益官网</title>
 	    <!-- Google Fonts -->
-	   <!--   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'>
+	  <!--   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'> -->
 	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
 	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	  	<script src="https://code.jquery.com/jquery.min.js"></script>
-    	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  -->
 	    <!-- Custom CSS -->
+	    
 	   <link rel="stylesheet" style="css/text" href="../static/css/base.css"/>
 		<link rel="stylesheet" style="css/text" href="../static/css/index.css"/>
-		<link rel="stylesheet" style="css/text" href="../static/css/user.css"/>
-		<link rel="stylesheet" style="css/text" href="../static/css/colu.css"/>
-		<link rel="stylesheet" style="css/text" href="../static/css/about.css"/>
-		<link rel="stylesheet" style="css/text" href="../static/css/jquery.css"/>
 		<link rel="stylesheet" style="css/text" href="../static/css/style.css"/>
-		<link rel="stylesheet" style="css/text" href="../static/css/control.css"/>
-		<link rel="stylesheet" style="css/text" href="../static/css/jquery.skippr.css"/>
-		<script type="text/javascript" src="../static/js/jquery-2.0.min.js"></script>
-		<script type="text/javascript" src="../static/js/html5.js"></script>
-		<script type="text/javascript" src="../static/js/excanvas.js"></script>
-		<script type="text/javascript" src="../static/js/indexplay.js"></script>
-		<script type="text/javascript" src="../static/js/bar.js"></script>
-		<script type="text/javascript" src="../static/js/ajaxfileupload.js"></script>
-		<script type="text/javascript" src="../static/js/common.js"></script>
-		<script type="text/javascript" src="../static/js/tag.js"></script>
-		<script type="text/javascript" src="../static/js/note.js"></script>
-		<script type="text/javascript" src="../static/js/provincial_league.js"></script>
+		<link rel="stylesheet" style="css/text" href="../static/css/jquery.skippr.css"/> 
 		<script type="text/javascript" src="../static/js/jquery.skin.js"></script>
 		<script type="text/javascript" src="../static/js/index.js"></script>
-		<script type="text/javascript" src="../static/js/qrcode.min.js"></script>
-	     <script src="../static/js/index.js"></script>
  <script>
 		var _hmt = _hmt || [];
 		(function() {
@@ -77,11 +61,11 @@
 			<div class="flexslider">
 		        <ul class="slides">
 			        <li style="background: url(&quot;../static/img/banner-2.png&quot;) center center no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" class="flex-active-slide">
-						 <a href="#" target="_self" style="cursor:pointer; display:block; height:356px; width:100%;"> 
+						 <a href="#" target="_self" style="cursor:pointer; display:block; height:300px; width:100%;"> 
 						</a> 
 					</li>	
 					<li style="background: url(&quot;../static/img/banner-1.png&quot;) center center no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
-						 <a href="/login" target="_self" style="cursor:pointer; display:block; height:356px; width:100%;"> 
+						 <a href="/login" target="_self" style="cursor:pointer; display:block; height:300px; width:100%;"> 
 						</a> 
 					</li>
 		        </ul>
@@ -96,7 +80,7 @@
 			</div>
 		</div>
 		
-		<!-- <div class="index_notice">
+		<div class="index_notice">
 			<div class="w">
 				<div class="n_list clearfix">
 					<i></i>
@@ -107,7 +91,7 @@
 					</ul>
 				</div>
 			</div>
-		</div> -->
+		</div> 
 		
 		
 		<!--  轮播图片 -->
@@ -124,7 +108,167 @@
 				$("#liExclusive").removeClass("z_cur");
 				$("#liAboutUs").removeClass("z_cur");
 			});
-		</script>    
+		</script>  
+		 <div id="projects" class="section-padding">
+        <div class="container">
+
+            <div class="row" th:each="entity:${entity}">
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-1.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p th:text="${entity.createTime}"></p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p th:text="${entity.id}"><i class="fa fa-money"></i> 238</p>
+                                    <p><i class="fa fa-jpy"></i> 20</p>
+                                    <p><i class="fa fa-plus-square"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2 ><a href="" th:text="${entity.welfareTitle}"></a></h2>
+                            <p th:text="${entity.tag}"></p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-2.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Expand - html5 template</a></h2>
+                            <p>HTML, CSS</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-3.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Icon - Landing page</a></h2>
+                            <p>HTML, CSS, Landing page</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-4.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Expand filter</a></h2>
+                            <p>WP Plugin</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-5.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Expand accordion</a></h2>
+                            <p>WP Plugin</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="single-project">
+                        <div class="project-preview">
+                            <a href=""><img src="../static/img/img-6.jpg" class="img-responsive" alt=""></a>
+                            <div class="project-meta">
+                                <div class="project-date">
+                                    <p>June 28, 2013</p>
+                                </div>
+                                
+                                <div class="project-count">
+                                    <p><i class="fa fa-eye"></i> 238</p>
+                                    <p><i class="fa fa-comment"></i> 20</p>
+                                    <p><i class="fa fa-download"></i> 128</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="project-link">
+                            <h2><a href="">Beautiful paypal buttons</a></h2>
+                            <p>WP Plugin</p>
+                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <a href="" class="more-link">查看更多 <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+		
+			
+			
     </div> 
 </body>
 </html>

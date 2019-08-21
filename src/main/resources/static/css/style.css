@@ -4,7 +4,7 @@
 .alignright {float:right;margin-left:15px;}
 .aligncenter {display:block;margin:0 auto 15px}
 a:focus {outline:0px solid}
-img {max-width:100%;height:auto}
+img {max-width:80%;height:auto}
 .fix {overflow:hidden}
 h1, h2, h3, h4, h5, h6 {margin:0 0 15px;font-family: 'Bitter', serif;color: #222;font-weight: 700}
 body {font-family: 'Open Sans', sans-serif;}
@@ -26,7 +26,7 @@ padding: 32px 15px;}
 
 .mainmenu .navbar-nav li:hover a {color: #fff;}
 
-.section-padding {padding: 100px 0}
+.section-padding {padding: 30px 0}
 
 #slider {
   background: none repeat scroll 0 0 #f7f7f7;

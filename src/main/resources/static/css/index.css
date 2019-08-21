@@ -95,7 +95,7 @@
 		-moz-transform: translateY(0)
 	}
 }	
-.index_notice{ height:30px; background: #F8F7F7; padding:10px 0; margin-bottom:15px}
+.index_notice{ height:50px; background: #F8F7F7; padding:10px 0; margin-bottom:0px}
 .n_list i{ float:left; display:inline-block; width:21px; height:18px; background:url(images/notice.png) no-repeat; margin-right:10px; margin-top:7px;}
 .n_list ul{ float:left; display:inline; height:30px; overflow:hidden; width:360px;}
 .n_list ul li{ line-height:30px; width:360px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}

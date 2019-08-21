@@ -38,14 +38,14 @@ h1,h2,h3,h4,h5,h6{ font-weight:normal;}
 .al{text-align:left;}
 .ac{text-align:center;}
 .ar{text-align:right;}
-.w{ width:1200px; margin-left:auto; margin-right:auto; min-width:1000px;}
+.w{ width:1150px; margin-left:auto; margin-right:auto; min-width:1000px;}
 .show{ display:block;}
 .open{ display:inline-block;}
 .hide{display:none;}
 
 /*header*/
-.g_head,.g_body,.g_foot{ min-width:1200px;}
-.h_top{ height:36px; background:#ebeef3;}
+.g_head,.g_body,.g_foot{ min-width:1000px;}
+/* .h_top{ height:0px; background:#ebeef3;} */
 .h_top li{ float:left; display:inline; line-height:36px;font-size:14px; }
 .h_top li a{ display:block;}
 .h_top li a:hover{ text-decoration:underline;}
@@ -131,7 +131,7 @@ li.name i{ width:16px; height:15px; background-position:-322px -23px; margin-top
 .link li{ float:left; margin-left:10px;}
 
 /****/
-.bodr{ border:#e5e6e6 solid 1px;}
+/* .bodr{ border:#e5e6e6 solid 1px;}
 .abtn{ display:block; border-radius:3px; line-height:35px; padding-bottom:3px; padding-top:2px; background:#e95050; color:#fff; font-size:20px; text-align:center;}
 .chart{ font-size:12px; line-height:normal;}
 .join_btn,.pay_btn,.zur_btn{ display:block; background:#4F6197; border-radius:3px; color:#fff; width:162px; text-align:center;}
@@ -139,7 +139,7 @@ li.name i{ width:16px; height:15px; background-position:-322px -23px; margin-top
 .pay_btn{ background:#dadbdb; color:#fff;}
 .buy_btn{ font-size:20px; line-height:42px;}
 .join_btn,.pay_btn{ font-size:16px; line-height:27px; padding-bottom:2px; padding-top:1px;}
-
+ */
 
 .join_btn{ 
 	position:relative;

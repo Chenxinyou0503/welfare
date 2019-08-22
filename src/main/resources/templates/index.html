@@ -71,7 +71,7 @@
 		        </ul>
 		   		 <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul>
 	   		</div>
-			<div class="i_news_side">
+			<div class="i_news_side" style="background:#fff; height:60px;  margin-top:15px;">
 				<div class="w i_total clearfix">
 					<p class="fl">注册用户数：<b>35976</b>人</p>
 					<p>历史爱心总人次：<b>69466</b>笔</p>
@@ -79,7 +79,7 @@
 				</div>
 			</div>
 		</div>
-		
+	<!-- 	
 		<div class="index_notice">
 			<div class="w">
 				<div class="n_list clearfix">
@@ -91,7 +91,7 @@
 					</ul>
 				</div>
 			</div>
-		</div> 
+		</div>  -->
 		
 		
 		<!--  轮播图片 -->
@@ -133,7 +133,7 @@
                         <div class="project-link">
                             <h2 ><a href="" th:text="${entity.welfareTitle}"></a></h2>
                             <p th:text="${entity.tag}"></p>
-                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                         <div class="project-link">
                             <h2><a href="">Expand - html5 template</a></h2>
                             <p>HTML, CSS</p>
-                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -181,7 +181,7 @@
                         <div class="project-link">
                             <h2><a href="">Icon - Landing page</a></h2>
                             <p>HTML, CSS, Landing page</p>
-                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
                         <div class="project-link">
                             <h2><a href="">Expand filter</a></h2>
                             <p>WP Plugin</p>
-                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@
                         <div class="project-link">
                             <h2><a href="">Expand accordion</a></h2>
                             <p>WP Plugin</p>
-                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -253,7 +253,7 @@
                         <div class="project-link">
                             <h2><a href="">Beautiful paypal buttons</a></h2>
                             <p>WP Plugin</p>
-                            <a href="" class="project-detail"><i class="fa fa-angle-right"></i></a>
+                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -266,9 +266,36 @@
             </div>
         </div>
     </div>
-		
-			
-			
-    </div> 
+	
+	<div class="footer"> 
+		<div id="footer">
+		  <p><a href="#" target="_blank">爱益公益慈善基金会</a> | <a href="#" target="_blank">关于爱益</a> | <a href="#">About AI YI</a> | <a href=#>服务条款</a> | <a href="#">广告服务</a> | <a href="#" target="_blank">客服中心</a> </p>
+		  <p> <span class="ywzt">Copyright © 2018 - 2019 AIYI. All Rights Reserved.</span></p>
+		  <p><a rel="license" href="#" target="_blank">爱益 </a> 版权所有</p>
+		</div>
+		<div class="fr_sidebar">
+			<div class="wrap">
+			    <a href="javascript:void(0)" id="link_slideTop" class="sidetop" style="display: block;"><i></i></a>
+			</div>
+		</div>
+		<script type="text/javascript">
+		$(function() {
+			$(window).scroll(function(){
+		      var top=$(window).scrollTop();
+		      if(top>50){
+		        $("#link_slideTop").fadeIn();
+		      }else{
+		        $("#link_slideTop").fadeOut();
+		      }
+		    });
+		    //点击返回头部效果
+		    $("#link_slideTop").click(function(){
+		    	$("html,body").animate({scrollTop:0});
+		    });
+		});
+		</script>
+	 </div>
+	 
+</div> 
 </body>
 </html>

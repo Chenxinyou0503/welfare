@@ -143,26 +143,27 @@ div.al_t3 i{ width:25px; height:28px; margin-top:13.5px; background-position:-32
 .al_item{ float:left; display:inline;  line-height:24px; padding:36px 0 0;}
 .al_item dt{ font-size:16px; }
 .al_item dd{ font-size:12px; color:#666666; }
-.i_news{ margin-bottom:30px; height:220px; }
-.i_news_main{ float:left; display:inline; width:926px;}
-.slider-wrap{ position:relative;}
-.i_news_side{ position: absolute;	bottom:0px; width: 100%; z-index: 10; height:74px;}
+/* .i_news{ margin-bottom:30px; height:220px; }
+.i_news_main{ float:left; display:inline; width:926px;} */
+/* .slider-wrap{ position:relative;} */
+/* .i_news_side{ position: absolute;	bottom:0px; width: 100%; z-index: 10; height:74px;}
 .i_news_side:before {
 	content: " ";
 	display: block;
 	position: absolute;
-	left: 0;
+	left: 20%; 
+	margin-left:auto; margin-right:auto; min-width:1000px;
 	bottom: 0;
-	width: 100%;
+	width: 60%;
 	height: 100%;
 	opacity: 0.23;
-	background: #FFFFFF;
-}
+	background: #cab9b9;
+} */
 .i_mode_side{ width:214px; height:220px;}
 .i_mode_list{ width:710px; height:218px;}
 .i_mode_list .hd_tit{ height:40px; padding-top:0;}
 .i_mode_list .hd_tit h2{ font-size:18px; line-height:40px; padding-left:5px;}
-i.news{ display:inline-block; width:64px; height:21px; background:url(images/ico.png) -700px 0 no-repeat; margin-left:5px; margin-top:9.5px}
+/* i.news{ display:inline-block; width:64px; height:21px; background:url(images/ico.png) -700px 0 no-repeat; margin-left:5px; margin-top:9.5px} */
 .i_mode_list .bd{ padding:30px 5px; margin:0 15px;}
 .i_news_fl{ width:475px; float:left; border-right:#e3e4e4 solid 1px; min-height:117px;}
 .i_news_fr{ float:right;  margin-left:-1px; min-height:117px}
@@ -296,7 +297,7 @@ i.ic_hours{ background-position:-422px -457px;}
 .i_modu .hd{ border-bottom:#e8e8e8 solid 1px; box-shadow:0 3px 3px -2px #e8e8e8; height:54px}
 .i_talk .bd{ padding:15px; height:151px;}
 .i_total{ text-align:center; font-size:0;}
-.i_total p{ display:inline-block; font-size: 18px;	color: #FFFFFF;	letter-spacing: 0.17px;	line-height: 24px;	padding: 25px 0;}
+.i_total p{display:inline-block;font-size: 23px;color: #555;letter-spacing: 0.17px;line-height: 20px;padding: 20px 0;}
 
 /**.i_total p em{ display:block;}
 .i_total p span b{ font-size:20px; color:#e95050; margin-right:6px; font-weight:normal; font-family:Arial;}**/

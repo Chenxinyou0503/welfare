@@ -1,24 +1,45 @@
 package com.welfare.entity;
 
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.*;
+import java.util.Date;
+
 /**
  * @Author ：chenxinyou.
  * @Title :
  * @Date ：Created in 2019/7/10 14:42
  * @Description:
  */
+@Repository
+@Table(name = "welfare")
 public class WelfareEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+    @Column(name = "welfare_name")
     private String welfareName;
+    @Column(name = "welfare_account")
     private long welfareAccount;
+    @Column(name = "welfare_actual_account")
     private long welfareActualAccount;
+    @Column(name = "welfare_sponsor")
     private String welfareSponsor;
+    @Column(name = "welfare_title")
     private String welfareTitle;
-    private long createTime;
-    private long endTime;
+    @Column(name = "create_time")
+    private Date createTime;
+    @Column(name = "end_time")
+    private Date endTime;
+    @Column(name = "context")
     private String context;
+    @Column(name = "bu_hash")
     private String buHash;
-    private int state;
+    @Column(name = "state")
+    private Integer state;
+    @Column(name = "tag")
     private String tag;
+
 
     public String getTag() {
         return tag;
@@ -76,19 +97,19 @@ public class WelfareEntity {
         this.welfareTitle = welfareTitle;
     }
 
-    public long getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(long createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public long getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(long endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 
@@ -108,11 +129,11 @@ public class WelfareEntity {
         this.buHash = buHash;
     }
 
-    public int getState() {
+    public Integer getState() {
         return state;
     }
 
-    public void setState(int state) {
+    public void setState(Integer state) {
         this.state = state;
     }
 }

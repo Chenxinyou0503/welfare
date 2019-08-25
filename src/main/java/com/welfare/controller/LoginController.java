@@ -2,6 +2,7 @@ package com.welfare.controller;
 
 import com.welfare.entity.UserEntity;
 import com.welfare.service.UserService;
+import com.welfare.util.CookieUtil;
 import com.welfare.util.MD5Util;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,8 +11,9 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @Author ：chenxinyou.
@@ -25,14 +27,14 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
-        return "login";
+    public ModelAndView login() {
+
+        return new ModelAndView("login");
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
-    public String login(HttpSession session, String username, String password) {
-
+    public String login(HttpServletResponse res, String username, String password) {
         JSONObject jsonObject = new JSONObject();
         if (StringUtils.isEmpty(username)) {
             jsonObject.put("code", "用户名不能为空");
@@ -51,7 +53,11 @@ public class LoginController {
             jsonObject.put("code", "密码不正确");
             return jsonObject.toString();
         }
-        session.setAttribute("user", entity);
+        try {
+            CookieUtil.setLoginCookie(res, entity);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         if (entity.getRole().equalsIgnoreCase("2")) {
             jsonObject.put("code", "ADMIN");
         }

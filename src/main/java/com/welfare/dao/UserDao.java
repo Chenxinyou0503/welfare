@@ -17,25 +17,20 @@ public interface UserDao extends MyMapper<UserEntity> {
     @Override
     int insert(UserEntity entity);
 
-    @Results(id = "query", value = {
+    @Results(id = "queryUser", value = {
             @Result(property = "id", column = "id"),
-            @Result(property = "welfareName", column = "welfare_name"),
-            @Result(property = "welfareAccount", column = "welfare_account"),
-            @Result(property = "welfareActualAccount", column = "welfare_actual_account"),
-            @Result(property = "welfareSponsor", column = "welfare_sponsor"),
-            @Result(property = "welfareTitle", column = "welfare_title"),
-            @Result(property = "createTime", column = "create_time"),
-            @Result(property = "endTime", column = "end_time"),
-            @Result(property = "context", column = "context"),
-            @Result(property = "buHash", column = "bu_hash"),
-            @Result(property = "state", column = "state"),
-            @Result(property = "image", column = "image"),
-            @Result(property = "tag", column = "tag")
+            @Result(property = "username", column = "username"),
+            @Result(property = "password", column = "password"),
+            @Result(property = "phone", column = "phone"),
+            @Result(property = "email", column = "email"),
+            @Result(property = "birthday", column = "birthday"),
+            @Result(property = "role", column = "role"),
+            @Result(property = "bu_id", column = "bu_id")
     })
     @Select("select * from user where username = #{username,jdbcType=VARCHAR} limit 0,1")
     UserEntity query(String username);
 
-    @ResultMap(value = "query")
+    @ResultMap(value = "queryUser")
     @Select("select * from user where username = #{username,jdbcType=VARCHAR} limit 0,1")
     UserEntity queryOne(String username);
 }

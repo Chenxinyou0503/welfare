@@ -1,5 +1,6 @@
 package com.welfare.service;
 
+import com.github.pagehelper.PageInfo;
 import com.welfare.entity.WelfareEntity;
 
 import java.util.List;
@@ -30,9 +31,27 @@ public interface WelfareService {
      *
      * @param welfareId
      */
-    public void updateStatus(String welfareId);
+    public void updateStatus(String welfareId, String state);
 
-    public List<WelfareEntity> selectListByAdmin(int pageNo, int pageSize, String type);
+    /**
+     * 管理员查询公益项目列表
+     *
+     * @param pageNo
+     * @param pageSize
+     * @param type
+     * @return
+     */
+    public PageInfo<WelfareEntity> selectListByAdmin(int pageNo, int pageSize, String type);
 
-    public List<WelfareEntity> selectListByUser(int pageNo, int pageSize, String userId);
+    /**
+     * 用户查询项目
+     *
+     * @param pageNo
+     * @param pageSize
+     * @param userId
+     * @return
+     */
+    public PageInfo<WelfareEntity> selectListByUser(int pageNo, int pageSize, String userId);
+
+    public PageInfo<WelfareEntity> selectListByIndex(int pageNo, int pageSize);
 }

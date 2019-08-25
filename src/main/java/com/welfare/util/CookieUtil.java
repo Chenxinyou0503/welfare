@@ -24,18 +24,6 @@ public class CookieUtil {
     private static final String tokenSep = "&";
     private static final String STATUS = "STATUS";
 
-
-    private static String cookieEncryptKey;
-    private static String cookieDomainSuffix;
-
-    public static void setCookieDomainSuffix(String cookieDomainSuffix) {
-        CookieUtil.cookieDomainSuffix = cookieDomainSuffix;
-    }
-
-    public static void setCookieEncryptKey(String cookieEncryptKey) {
-        CookieUtil.cookieEncryptKey = cookieEncryptKey;
-    }
-
     /**
      * 设置登录token
      *
@@ -47,7 +35,7 @@ public class CookieUtil {
             设置登录token
          */
         String tokenStr = userEntity.getUsername() + tokenSep + userEntity.getEmail() + tokenSep + userEntity.getRole();
-        String token = AesUtil.encrypt(tokenStr, cookieEncryptKey);
+        String token = AesUtil.encrypt(tokenStr, CookieConfig.cookieEncryptKey);
         addCookie(response, SystemConstants.LOGIN_TOKEN, token, true);
 
         /*
@@ -93,9 +81,9 @@ public class CookieUtil {
 
             return null;
         }
-        String tokenStr = AesUtil.decrypt(cookieToken, cookieEncryptKey);
+        String tokenStr = AesUtil.decrypt(cookieToken, CookieConfig.cookieEncryptKey);
         String[] tokenArr = tokenStr.split(tokenSep);
-        if (tokenArr.length != 4) {
+        if (tokenArr.length != 3) {
             return null;
         }
         String loginSignStr = cookieLoginSign;
@@ -109,6 +97,8 @@ public class CookieUtil {
 
         UserEntity loginAccount = new UserEntity();
         loginAccount.setUsername(tokenArr[0]);
+        loginAccount.setEmail(tokenArr[1]);
+        loginAccount.setRole(tokenArr[2]);
         return loginAccount;
     }
 
@@ -148,7 +138,7 @@ public class CookieUtil {
         if (cookie != null) {
             cookie.setMaxAge(0);
             cookie.setPath("/");
-            cookie.setDomain(cookieDomainSuffix);
+            cookie.setDomain(CookieConfig.cookieDomainSuffix);
             cookie.setValue(null);
             response.addCookie(cookie);
         }
@@ -162,8 +152,8 @@ public class CookieUtil {
     private static void addCookie(HttpServletResponse response, String cookieName, String cookieValue, boolean httpOnly) {
         StringBuilder buffer = new StringBuilder();
         buffer.append(cookieName).append("=").append(cookieValue).append(";");
-        if (!StringUtils.isEmpty(cookieDomainSuffix)) {
-            buffer.append(" domain=").append(cookieDomainSuffix).append(";");
+        if (!StringUtils.isEmpty(CookieConfig.cookieDomainSuffix)) {
+            buffer.append(" domain=").append(CookieConfig.cookieDomainSuffix).append(";");
         }
         buffer.append("path=").append("/").append(";");
         if (httpOnly) {

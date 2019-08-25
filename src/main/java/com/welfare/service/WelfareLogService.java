@@ -12,6 +12,11 @@ import java.util.List;
  */
 public interface WelfareLogService {
 
+    /**
+     * 查询项目捐赠日志
+     * @param welfareId
+     * @return
+     */
     public List<WelfareLogEntity> selectListByWelfareId(String welfareId);
 
 }

@@ -7,6 +7,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -16,7 +17,7 @@ public class IndexController {
         List<WelfareEntity> list = new ArrayList<>();
         WelfareEntity entity = new WelfareEntity();
         entity.setWelfareAccount(1);
-        entity.setCreateTime(System.currentTimeMillis());
+        entity.setCreateTime(new Date());
         entity.setWelfareTitle("爱心互助平台-我想活下去");
         entity.setId(123);
         entity.setTag("大病，癌症");

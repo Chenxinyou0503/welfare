@@ -10,11 +10,24 @@ import com.welfare.entity.UserEntity;
  */
 public interface UserService {
 
+    /**
+     * 注册
+     * @param username
+     * @param password
+     * @param phone
+     * @return
+     */
     public String register(String username, String password, String phone);
 
+    /**
+     * 登录
+     * @param username
+     * @param password
+     * @return
+     */
     public UserEntity login(String username, String password);
 
-    /**
+    /** 根据用户名查询用户信息
      * @param username
      * @return
      */

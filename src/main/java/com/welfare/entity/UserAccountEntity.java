@@ -8,7 +8,7 @@ import javax.persistence.Table;
  * @Date ：Created in 2019/7/10 14:42
  * @Description:
  */
-@Table(name = "user")
+@Table(name = "user_account")
 public class UserAccountEntity {
 
     private long id;

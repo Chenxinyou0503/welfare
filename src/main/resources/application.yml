@@ -26,3 +26,8 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
   params: count=countSql
+welfare:
+  hostname:
+    url:  localhost
+  cookie:
+    encryptKey: 168367766d874d98870c8ce618942f48

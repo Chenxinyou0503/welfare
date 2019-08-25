@@ -5,6 +5,7 @@ function register() {
     $.ajax({
         url: "/register",
         type: "POST",
+        contentType: "application/json;charset=UTF-8",
         dataType: "json",
         data: {name: username, password: password, phone: phone},
         success: function (data) {
@@ -29,12 +30,14 @@ function login() {
     $.ajax({
         url: "/login",
         type: "POST",
+        contentType: "application/json;charset=UTF-8",
         dataType: "json",
         data: {username: username, password: password},
         success: function (data) {
+            debugger
             console.info(data)
             if (data.code == "SUCCESS") {
-                window.location.href = '/';
+                window.location.href = '/user';
             } else if (data.code == "ADMIN") {
                 window.location.href = '/admin';
             } else {
@@ -42,7 +45,7 @@ function login() {
             }
         },
         error: function (e) {
-
+            console.info(e)
         }
     });
 }

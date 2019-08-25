@@ -36,4 +36,11 @@ public interface UserAccountService {
      * @return
      */
     public List<UserAccountEntity> selectLogList(String userId, int pageNo, int pageSize, String type);
-}
+
+    /**
+     * 捐赠金额，
+     * @param userId 用户ID
+     * @param welfareId 公益项目ID
+     * @param amount 捐赠金额
+     */
+    public void donate(String userId,String welfareId,String amount);}

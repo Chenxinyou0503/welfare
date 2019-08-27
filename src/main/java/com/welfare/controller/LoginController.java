@@ -3,6 +3,7 @@ package com.welfare.controller;
 import com.welfare.entity.UserEntity;
 import com.welfare.service.UserService;
 import com.welfare.util.CookieUtil;
+import com.welfare.util.LoginAccountUtil;
 import com.welfare.util.MD5Util;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -85,5 +87,12 @@ public class LoginController {
             jsonObject.put("code", "error");
         }
         return jsonObject.toString();
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public ModelAndView logout(HttpServletRequest req, HttpServletResponse res) {
+        LoginAccountUtil.clearYzAdAccountModel();
+        CookieUtil.deleteLoginCookie(res, req);
+        return new ModelAndView("login");
     }
 }

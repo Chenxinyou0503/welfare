@@ -41,13 +41,13 @@ public class ServerLoginFilter implements Filter {
                 return;
             }
 
-            // 登录过滤
-            Map checkResult = handleBossRequest(request, response);
-            if ("true".equalsIgnoreCase(checkResult.get("success").toString())) {
-                filterChain.doFilter(request, response);
-            } else {
-                response.sendRedirect("/login");
-            }
+//            // 登录过滤
+//            Map checkResult = handleBossRequest(request, response);
+//            if ("true".equalsIgnoreCase(checkResult.get("success").toString())) {
+//                filterChain.doFilter(request, response);
+//            } else {
+//                response.sendRedirect("/login");
+//            }
         } catch (Exception e) {
             Map<String, String> map = new HashMap<>();
             map.put("message", "登录异常");
@@ -77,7 +77,7 @@ public class ServerLoginFilter implements Filter {
         ) {
             return true;
         }
-        return false;
+        return true;
     }
 
     /**

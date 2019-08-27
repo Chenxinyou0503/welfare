@@ -15,18 +15,5 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class UserController {
 
-    @RequestMapping("/user")
-    public ModelAndView user() {
-        ModelAndView mav = new ModelAndView("user");
-        try {
-            UserEntity entity = LoginAccountUtil.getUserEntity();
-            if (entity == null) {
-                return new ModelAndView("login");
-            }
-            long userId = entity.getId();
-            return mav.addObject("user", entity);
-        } catch (Exception e) {
-            return new ModelAndView("404");
-        }
-    }
+
 }

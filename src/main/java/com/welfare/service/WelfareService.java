@@ -1,9 +1,8 @@
 package com.welfare.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import com.welfare.entity.WelfareEntity;
-
-import java.util.List;
 
 /**
  * @Author ：chenxinyou.
@@ -54,4 +53,6 @@ public interface WelfareService {
     public PageInfo<WelfareEntity> selectListByUser(int pageNo, int pageSize, String userId);
 
     public PageInfo<WelfareEntity> selectListByIndex(int pageNo, int pageSize);
+
+    public JSONObject settlement(String welfareId);
 }

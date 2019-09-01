@@ -33,4 +33,7 @@ public interface UserDao extends MyMapper<UserEntity> {
     @ResultMap(value = "queryUser")
     @Select("select * from user where username = #{username,jdbcType=VARCHAR} limit 0,1")
     UserEntity queryOne(String username);
+
+    @Update("update user SET password =#{password,jdbcType=VARCHAR} where id = #{userId}")
+    int updatePassword(@Param("userId") long userId, @Param("password") String password);
 }

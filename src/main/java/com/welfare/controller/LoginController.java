@@ -88,6 +88,27 @@ public class LoginController {
         }
         return jsonObject.toString();
     }
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
+    @ResponseBody
+    public String update(String name, String password,String newPassword) {
+        JSONObject jsonObject = new JSONObject();
+        if (StringUtils.isEmpty(name)) {
+            jsonObject.put("code", "用户名不能为空");
+            return jsonObject.toString();
+        }
+        UserEntity entity = userService.queryOne(name);
+        if (StringUtils.isEmpty(entity)) {
+            jsonObject.put("code", "用户名不存在");
+            return jsonObject.toString();
+        }
+        String result = userService.updatePassword(name, password, newPassword);
+        if (result.equalsIgnoreCase("SUCCESS")) {
+            jsonObject.put("code", result);
+        } else {
+            jsonObject.put("code", "error");
+        }
+        return jsonObject.toString();
+    }
 
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public ModelAndView logout(HttpServletRequest req, HttpServletResponse res) {

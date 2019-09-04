@@ -49,4 +49,12 @@ public interface WelfareDao extends MyMapper<WelfareEntity> {
     )
     public List<WelfareEntity> selectListByState(@Param("state") Integer state);
 
+    @Select("select * from welfare where id=#{id,jdbcType=VARCHAR}")
+    public WelfareEntity selectWelfareOne(@Param("id") String id);
+
+    @Update("update welfare set " +
+            " welfare_actual_account =#{welfareActualAccount,jdbcType=INTEGER}" +
+            "where id=#{id,jdbcType=VARCHAR}")
+    public int updateWelfareAccount(@Param("id") long id,
+                                    @Param("welfareActualAccount") long welfareActualAccount);
 }

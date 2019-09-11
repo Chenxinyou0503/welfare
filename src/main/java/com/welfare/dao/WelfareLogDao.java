@@ -2,10 +2,7 @@ package com.welfare.dao;
 
 import com.welfare.MyMapper;
 import com.welfare.entity.WelfareLogEntity;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,6 +13,7 @@ import java.util.List;
  * @Date ：Created in 2019/7/10 14:49
  * @Description:
  */
+@Mapper
 public interface WelfareLogDao extends MyMapper<WelfareLogEntity> {
 
     @Results(id = "queryLog", value = {

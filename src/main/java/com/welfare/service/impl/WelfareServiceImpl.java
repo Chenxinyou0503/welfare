@@ -99,7 +99,7 @@ public class WelfareServiceImpl implements WelfareService {
         if (welfareEntity != null) {
             if (welfareEntity.getState() == 3) {
                 UserEntity userEntity = userDao.queryOne(welfareEntity.getWelfareName());
-                UserAccountEntity userAccountEntity = userAccountDao.select(userEntity.getId());
+                UserAccountEntity userAccountEntity = userAccountDao.selectByUserId(userEntity.getId());
                 long total = userAccountEntity.getMoney() + welfareEntity.getWelfareActualAccount();
                 userAccountDao.updateUserAccount(total, userEntity.getId());
                 //TODO 调用布比接口

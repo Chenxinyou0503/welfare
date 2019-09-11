@@ -2,10 +2,7 @@ package com.welfare.dao;
 
 import com.welfare.MyMapper;
 import com.welfare.entity.UserAccountLogEntity;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -15,7 +12,7 @@ import java.util.List;
  * @Date ：Created in 2019/8/25 14:24
  * @Description:
  */
-
+@Mapper
 public interface UserAccountLogDao extends MyMapper<UserAccountLogEntity> {
 
     @Results(id = "queryAccountLog", value = {

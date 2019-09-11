@@ -44,7 +44,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public JSONObject recharge(long userId, int amount) {
         JSONObject jsonObject = new JSONObject();
-        UserAccountEntity userAccountEntity = userAccountDao.select(userId);
+        UserAccountEntity userAccountEntity = userAccountDao.selectByUserId(userId);
         if (StringUtils.isEmpty(userAccountEntity)) {
             jsonObject.put("code", "error");
             jsonObject.put("msg", "账号不存在");
@@ -75,7 +75,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public JSONObject withdraw(long userId, int amount) {
         JSONObject jsonObject = new JSONObject();
-        UserAccountEntity userAccountEntity = userAccountDao.select(userId);
+        UserAccountEntity userAccountEntity = userAccountDao.selectByUserId(userId);
         if (StringUtils.isEmpty(userAccountEntity)) {
             jsonObject.put("code", "error");
             jsonObject.put("msg", "账号不存在");
@@ -127,7 +127,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     public JSONObject donate(long userId, String welfareId, int amount) {
         JSONObject jsonObject = new JSONObject();
         WelfareEntity welfareEntity = welfareDao.selectWelfareOne(welfareId);
-        UserAccountEntity userAccountEntity = userAccountDao.select(userId);
+        UserAccountEntity userAccountEntity = userAccountDao.selectByUserId(userId);
         if (StringUtils.isEmpty(userAccountEntity)) {
             jsonObject.put("code", "error");
             jsonObject.put("msg", "账号余额不足");
@@ -171,7 +171,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     @Override
     public UserAccountEntity selectUserAccount(long userId) {
-        return userAccountDao.select(userId);
+        return userAccountDao.selectByUserId(userId);
     }
 
 

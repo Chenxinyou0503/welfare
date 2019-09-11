@@ -12,6 +12,7 @@ import java.util.List;
  * @Date ：Created in 2019/7/10 14:48
  * @Description:
  */
+@Mapper
 public interface WelfareDao extends MyMapper<WelfareEntity> {
     /**
      * 修改项目状态

@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.*;
  * @Date ：Created in 2019/7/10 14:48
  * @Description:
  */
+@Mapper
 public interface UserAccountDao extends MyMapper<UserAccountEntity> {
 
 
@@ -20,7 +21,7 @@ public interface UserAccountDao extends MyMapper<UserAccountEntity> {
             @Result(property = "code", column = "code")
     })
     @Select("select * from user_account where user_id =#{userId,jdbcType=VARCHAR}")
-    UserAccountEntity select(long userId);
+    UserAccountEntity selectByUserId(long userId);
 
     @Update("update user_account set money = #{money,jdbcType=INTEGER} where user_id =#{userId}")
     int updateUserAccount(@Param("money") long money, @Param("userId") long userId);

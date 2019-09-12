@@ -1,80 +1,342 @@
-<!DOCTYPE html>
-<html>
-<head>
+<html><head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Login</title>
-	<link rel="stylesheet" href="../static/css/auth.css">
+	<meta name="renderer" content="webkit">
+	<link rel="stylesheet" style="css/text" href="../static/css/base.css">
+	<link rel="stylesheet" style="css/text" href="../static/css/index.css">
+	<link rel="stylesheet" style="css/text" href="../static/css/colu.css">
+	<link rel="stylesheet" style="css/text" href="../static/css/style.css">
+	<script src="https://code.jquery.com/jquery.min.js"></script>
 
-</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<body>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="../static/js/login.js"></script>
-	<div class="lowin">
-		<div class="lowin-brand">
-			<img src="../static/jpg/kodinger.jpg" alt="logo">
-		</div>
-		<div class="lowin-wrapper">
-			<div class="lowin-box lowin-login">
-				<div class="lowin-box-inner">
-					<form id="loginForm">
-						<p>登录</p>
-						<div class="lowin-group">
-							<label>用户名 <a href="#" class="login-back-link">登录</a></label>
-							<input type="text" autocomplete="username" name="username" class="lowin-input">
-						</div>
-						<div class="lowin-group password-group">
-							<label>密码 <a href="#" class="forgot-link">忘记密码?</a></label>
-							<input type="password" name="password" autocomplete="current-password" class="lowin-input">
-						</div>
-						<button class="lowin-btn login-btn" onclick="login()">
-							登录
-						</button>
-
-						<div class="text-foot">
-							还没有账户？ <a href="" class="register-link">注册</a>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<div class="lowin-box lowin-register">
-				<div class="lowin-box-inner">
-						<p>创建你的账户</p>
-						<div class="lowin-group">
-							<label>用户名</label>
-							<input type="text" name="nameR" autocomplete="nameR" class="lowin-input">
-						</div>
-						<div class="lowin-group">
-							<label>手机号</label>
-							<input type="phone" autocomplete="phoneR" name="phoneR" class="lowin-input">
-						</div>
-						<div class="lowin-group">
-							<label>密码</label>
-							<input type="password" name="passwordR" autocomplete="current-password" class="lowin-input">
-						</div>
-						<button class="lowin-btn" onclick = "register();">
-							注册
-						</button>
-
-						<div class="text-foot">
-							已有账号? <a href="" class="login-link">登录</a>
-						</div>
-				</div>
-			</div>
-		</div>
-	
-		<footer class="lowin-footer">
-		</footer>
-	</div>
-
-	<script src="../static/js/auth.js"></script>
 
 	<script>
-		Auth.init({
-			forgot_url: '#forgot'
-		});
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?cbe66539543f147f5b0ae378b18d911a";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
 	</script>
-</body>
-</html>
+</head>
+<body >
+
+<div class="g_body">
+	<div class="login w clearfix">
+		<div class="log_modu bodr clearfix" style="margin-top:50px; margin-bottom: 50px;">
+			<div class="loginInfo fl">
+				<ul>
+					<li class="clearfix">
+						<div class="inpu" id="DivName">
+							<i class="icoUser"></i> <input type="text" id="name" name="name" value="" placeholder="用户名/手机号">
+						</div>
+						<div class="int">
+							<span class="iNote xf_register_intext3 hide"></span> <span class="iError" id="s_userName"></span>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="inpu" id="DivPwd">
+							<i class="icoPwd"></i> <input type="password" id="password" name="password" value="" placeholder="请输入密码">
+						</div>
+						<div class="int">
+							<span class="iNote xf_register_intext3 hide"><i></i></span> <span id="s_password" class="iError "></span>
+						</div>
+					</li>
+					<li class="clearfix">
+						<div class="inpu" id="DivMobile">
+							<i class="icoIphone"></i>
+							<input type="text" id="mobile" name="mobile" value="" maxlength="20" onkeyup="value=value.replace(/[^\d\.]/g, '').replace(/(\.\d{2}).*/g, '$1')" placeholder="请输入您的手机号码">
+						</div>
+						<div class="int">
+							<span class="iNote xf_register_intext3 hide"></span>
+							<span id="s_mobile" class="iError "></span>
+						</div>
+					</li>
+					<li>
+						<div class="nextline clearfix">
+							<a href="/loginAndRegister/resetPassword?theme=tongyirong" title="忘记密码" target="" class="txtdec">忘记密码</a>
+						</div>
+					</li>
+					<li class="tologin"><input type="button" onclick="login()" name="" value="立即登录" class="fontBtn">
+						<p>
+							<i></i>您的信息已使用SSL加密技术，数据传输安全
+						</p></li>
+
+				</ul>
+			</div>
+			<div class="log_boder fl"></div>
+			<div class="log_fr fl">
+				<p class="l_f_top">还没有账户？</p>
+				<p class="l_f_bot">
+					<a href="/loginAndRegister/register" title="" class="l_toreg">立即注册 <em>&gt;&gt;</em></a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="contextPath" value="">
+<script type="text/javascript">
+    $(function () {
+        if(""!=""){
+            alert("");
+        }
+        $.post("/loginAndRegister/setCode", function (data) {
+            var arr = eval(data);
+            var img = arr.img;
+            $("#randomId").val(img);
+            $("#captchaImage").attr("src", "/loginAndRegister/getImg?id=" + img)
+        });
+    })
+
+    $(document).keyup(function (event) {
+        if (event.keyCode == 13) {
+            login();
+        }
+    });
+
+    $(document).ready(function () {
+        if (getCookies("cookieUserName") != null) {
+            $("#name").val(getCookies("cookieUserName"));
+        }
+    });
+
+    //取cookies的值
+    function getCookies(name) {
+        var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
+        if (arr != null) return unescape(arr[2]);
+        return null;
+    }
+
+    function labelSelected() {
+        var olabel = $("#label_login");
+        if ($(olabel).hasClass("z_sel")) {
+            $("#input_login").val("0");
+            $(olabel).removeClass("z_sel");
+        } else {
+            $("#input_login").val("1");
+            $(olabel).addClass("z_sel");
+        }
+    }
+
+    function login(flag) {
+
+        var name = $("#name").val();
+        var password = $("#password").val();
+        var randomId = $("#randomId").val();
+        var randomCode = $("#randomCode").val();
+
+        var mobile = $("#mobile").val();
+        var phoneCode=$("#phonecode").val();
+        if (mobile == '') {
+            alert("请输入手机号码");
+            $("#s_mobile").show().html("请输入手机号码");
+            $("#DivMobile").addClass("error");
+            return;
+        }else if (!mobile.isMobileNum()) {
+            alert("请输入正确的手机号码");
+            $("#s_mobile").show().html("请输入正确的手机号码");
+            $("#DivMobile").addClass("error");
+            return;
+        }else{
+            $("#s_mobile").hide().html("");
+            $("#DivMobile").removeClass("error");
+        }
+        if(phoneCode==''){
+            alert("请输入手机验证码");
+            return;
+        }
+
+        if (name == '') {
+            $("#nameError").addClass("error");
+            $("#s_userName").show();
+            $("#s_userName").html("请输入用户名");
+
+            $("#DivName").removeClass("inpu");
+            $("#DivName").addClass("inpu error");
+
+            return;
+        } else {
+            $("#nameError").removeClass("error");
+            $("#s_userName").hide();
+
+            $("#DivName").removeClass("inpu error");
+            $("#DivName").addClass("inpu");
+        }
+
+        if (password == '') {
+            $("#pwdError").addClass("error");
+            $("#s_password").show();
+            $("#s_password").html("请输入密码");
+
+            $("#DivPwd").removeClass("inpu");
+            $("#DivPwd").addClass("inpu error");
+            return;
+        } else {
+            $("#pwdError").removeClass("error");
+            $("#s_password").hide();
+
+            $("#DivName").removeClass("inpu error");
+            $("#DivName").addClass("inpu");
+        }
+
+        if (randomCode == '') {
+            $("#s_randomId").show();
+            $("#s_randomId").html("请输入验证码");
+
+            $("#DivRand").removeClass("inpu");
+            $("#DivRand").addClass("inpu error");
+
+            return;
+        } else {
+            $("#s_randomId").hide();
+
+            $("#DivRand").removeClass("inpu error");
+            $("#DivRand").addClass("inpu");
+        }
+
+        if ($("#label_login").hasClass("z_sel")) {
+            //存cookie的键(取cookie里的用户姓名用)
+            var cookieName = "cookieUserName";
+
+            var Days = 30; //此 cookie将被保存 30 天
+            var exp = new Date();//new Date("December 31, 9998");
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = cookieName + "=" + escape(name) + ";expire*=" + exp.toGMTString();
+        }
+
+        $.ajax({
+            data: {name: encryptRsa(name), password: encryptRsa(password), randomId: randomId, randomCode: randomCode,mobile:mobile,phoneCode:phoneCode,type:'login',check:flag?1:0},
+            timeout: 180000,
+            type: 'POST',
+            dataType: 'json',
+            url: '/loginAndRegister/loginAjaxValidation',
+            error: function (data) {
+                alert("网络异常，请重试!");
+                location.reload();
+            },
+            success: function (data) {
+                loginResult(data);
+            }
+        });
+    }
+    /**
+     * 登录返回结果
+     */
+    function loginResult(data) {
+        if (data.errorInfo.code >= 0) {
+            if (data.accountCheckMap.code == 4) {
+                if (confirm("去开通存管账户？")) {
+                    window.location.href = "/loginAndRegister/chooseIdentity";
+                } else {
+                    window.location.href = '/account/home';
+                }
+            } else {
+                window.location.href = '/account/home';
+            }
+        } else {
+            debugger;
+            switch (data.errorInfo.code) {
+                case -1:
+                    $("#s_userName").show();
+                    $("#s_userName").html(data.errorInfo.msg);
+                    refreshCaptcha();
+                    break;
+                case -2:
+                    $("#s_password").show();
+                    $("#s_password").html(data.errorInfo.msg);
+                    refreshCaptcha();
+                    break;
+                case -3:
+                    $("#s_randomId").show();
+                    $("#s_randomId").html(data.errorInfo.msg);
+                    refreshCaptcha();
+                    break;
+                case -4:
+                    $("#s_mobile").show().html(data.errorInfo.msg);
+                    refreshCaptcha();
+                    break;
+                case -5:
+                    alert(data.errorInfo.msg);
+                    refreshCaptcha();
+                    break;
+                case -11:
+                    if(confirm(data.errorInfo.msg)){
+                        login(true);
+                    }
+                    break;
+                    defalut:
+                        break;
+            }
+
+        }
+    }
+
+    function refreshCaptcha() {
+        $.ajax({
+            url: "/loginAndRegister/setCode",
+            type: "POST",
+            data: {},
+            success: function (data) {
+                var arr = eval(data);
+                var img = arr.img;
+                $("#randomId").val(img);
+                $("#captchaImage").attr("src", "/loginAndRegister/getImg?id=" + img);
+            },
+            error: function () {
+                alert("对不起，出现错误!");
+            }
+        });
+    }
+
+    /**
+     * 获取短信验证码
+     */
+    function getMobile() {
+        var mobile = $("#mobile").val();
+        if (mobile == '') {
+            alert("请输入手机号码");
+            return false;
+        }
+        if (!mobile.isMobileNum()) {
+            alert("请输入正确的手机号码");
+            return false;
+        }
+
+        $("#teleTime").attr("disabled", "disabled");
+        $('#teleTime').unbind("click");
+        $.ajax({
+            url: "/loginAndRegister/sendMobileCode",
+            type: "POST",
+            data: {mobile: mobile,type:"login"},
+            success: function (data) {
+                var arr = eval(data);
+                if (arr.code < 0) {
+                    alert(arr.msg);
+                    $('#teleTime').bind("click");
+                    $("#teleTime").attr("disabled", false);
+                    return false;
+                }
+                teleCodeTimer("teleTime");
+            },
+            error: function (e,r) {
+                alert("系统异常!");
+            }
+        });
+    }
+
+    /**
+     * RSA加密
+     * @param data
+     * @returns {string}
+     */
+    function encryptRsa(data) {
+        var encrypt = new JSEncrypt();
+        encrypt.setPublicKey("MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIkJAbJLtkxs0daDEjY4T7J9ukXfMnNs5E7jfehK/PafhOAHoWo8AWNwgzIGlag5mojImGx2gaVAlafPWCONx2kCAwEAAQ=="); // pubkey是公钥内容
+        var encrypted = encrypt.encrypt(data);
+        return encrypted;
+    }
+</script>
+
+
+</div></body></html>

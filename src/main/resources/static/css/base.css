@@ -141,7 +141,7 @@ li.name i{ width:16px; height:15px; background-position:-322px -23px; margin-top
 .join_btn,.pay_btn{ font-size:16px; line-height:27px; padding-bottom:2px; padding-top:1px;}
  */
 
-.join_btn{ 
+.join_btn{
 	position:relative;
 	z-index: 1;
 	-moz-transition: all .3s ease;
@@ -163,7 +163,7 @@ li.name i{ width:16px; height:15px; background-position:-322px -23px; margin-top
 	-o-transition: all .3s ease;
 	-webkit-transition: all .3s ease;
 	transition: all .3s ease; border-radius:3px;
-	
+
 }
 .join_btn:hover{ color:#fff;}
 .join_btn:hover::before { height: 100%; }
@@ -194,7 +194,7 @@ span.xf_wylc_page_firsthot{ border:none;}
 .shade{ padding:4px;filter:progid:DXImageTransform.Microsoft.Gradient(startColorstr=#e5e5e5,endColorstr=#e5e5e5);}
 .shade:not(tid){ -moz-transition:top 0.8s ease 0s; border-radius:4px; filter:progid:DXImageTransform.Microsoft.Gradient(enabled=false); margin:0 auto;}
 .Opacity{ border:1px solid #e5e5e5;  box-shadow:0px 0px 0px 4px #e5e5e5;background:#fafafa;}
-.wp666{ width:666px;} 
+.wp666{ width:666px;}
 .poptit{ position:relative; height:60px; background:#555555; line-height:60px; text-align:center;}
 .poptit strong{ font-size:18px; font-weight:normal; letter-spacing:2px; color:#fff;}
 .popcon{ color:#555; background:#fafafa; padding-bottom:38px}
@@ -211,7 +211,7 @@ span.xf_wylc_page_firsthot{ border:none;}
 .icar{ background-position:-154px -89px;}
 .ihouse{ background-position:-154px -134px}
 .icard{ background-position:-154px -179px}
-.default{background-position:-200px -85px;} 
+.default{background-position:-200px -85px;}
 .default{ background-position:-154px -256px;}
 
 
@@ -324,10 +324,10 @@ dt.dq_jd{ line-height:60px;}
 .ckhtbankdiv,.ckhtbankdiv .xf_wyjkwszl_4_windowInner{ width:264px;}
 .ck_ht { text-align:center;}
 .ck_ht p{ text-align:left; line-height:30px; padding-left:40px;}
-.ck_ht a{ color:#35aaf2; display:inline-block;} 
+.ck_ht a{ color:#35aaf2; display:inline-block;}
 .sc_bd{ width:174px; height:174px; margin-bottom:10px; overflow:hidden}
 .sc_bd ul{ width:400%;}
-.sc_bd li{ float:left; display:inline;} 
+.sc_bd li{ float:left; display:inline;}
 .sc_bd li img{ width:174px; height:174px;}
 .sc_hd { margin-bottom:10px}
 .sc_hd span{ float:left; display:inline-block; width:50px; padding:0; text-align:center; cursor:pointer; margin-right:10px}

@@ -1,301 +1,238 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org">
   <head>
 	    <meta charset="utf-8">
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
-	  
 	    <title>爱益官网</title>
-	    <!-- Google Fonts -->
-	  <!--   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-	    <link href='http://fonts.googleapis.com/css?family=Bitter:400,700' rel='stylesheet' type='text/css'> -->
-	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
-	    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	  	<script src="https://code.jquery.com/jquery.min.js"></script>
-    	<!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>  -->
-	    <!-- Custom CSS -->
-	    
-	   <link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
-		<link rel="stylesheet" type="text/css" href="../static/css/index.css"/>
-		<link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
-		<link rel="stylesheet" type="text/css" href="../static/css/jquery.skippr.css"/>
-		<script type="text/javascript" src="../static/js/jquery.skin.js"></script>
-		<script type="text/javascript" src="../static/js/index.js"></script>
- <script>
-		var _hmt = _hmt || [];
-		(function() {
-		  var hm = document.createElement("script");
-		  hm.src = "//hm.baidu.com/hm.js?cbe66539543f147f5b0ae378b18d911a";
-		  var s = document.getElementsByTagName("script")[0]; 
-		  s.parentNode.insertBefore(hm, s);
-		})();
-</script>
-   </head> 
-<body class="">
-    <div class="g_head">
-		<div class="h_top">
-	    	<div class="w clearfix">
-					<ul class="h_fr clearfix">
-	               		<li class="h_tel"><i></i>您好，欢迎参与爱益平台</li>
-						<li class="to_log" id="login_li_l"><a href="/login" title="登录">登录</a></li> 
-	                	<!-- <li class="to_reg" id="login_li_r"><a href="/loginAndRegister/register" title="注册">注册</a></li> -->
-					</ul>
-	        </div>
-	    </div>
-	    <div class="h_nav">
-	    	<div class="w clearfix">
-			      <h1 class="logo fl"><a href="/" title="爱益平台">爱益平台</a></h1>
-				<div class="nav fr">
-				    <ul class="clearfix">
-				        <li id="liHome" class="z_cur"><i></i><a href="/" title="爱心首页">爱心首页</a></li>
-				        <li id="liFinancial"><i></i><a href="#" title="">捐献爱心</a></li>
-				        <li id="liBorrowing"><i></i><a href="/front/bidaction/indexs" title="">关于</a></li>
-				    </ul>
-				</div>
-			</div>
-		</div>
-	</div>
-   <!-- End 1 header area -->  
-   <div class="g_body">
-	    <div class="slider-wrap">
-			<div class="flexslider">
-		        <ul class="slides">
-			        <li style="background: url(&quot;../static/img/banner-2.png&quot;) center center no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 1; display: block; z-index: 2;" class="flex-active-slide">
-						 <a href="#" target="_self" style="cursor:pointer; display:block; height:300px; width:100%;"> 
-						</a> 
-					</li>	
-					<li style="background: url(&quot;../static/img/banner-1.png&quot;) center center no-repeat; width: 100%; float: left; margin-right: -100%; position: relative; opacity: 0; display: block; z-index: 1;" class="">
-						 <a href="/login" target="_self" style="cursor:pointer; display:block; height:300px; width:100%;"> 
-						</a> 
-					</li>
-		        </ul>
-		   		 <ol class="flex-control-nav flex-control-paging"><li><a class="flex-active">1</a></li><li><a class="">2</a></li></ol><ul class="flex-direction-nav"><li><a class="flex-prev" href="#"></a></li><li><a class="flex-next" href="#"></a></li></ul>
-	   		</div>
-			<div class="i_news_side" style="background:#fff; height:60px;  margin-top:15px;">
-				<div class="w i_total clearfix">
-					<p class="fl">注册用户数：<b>35976</b>人</p>
-					<p>历史爱心总人次：<b>69466</b>笔</p>
-					<p class="fr">历史善款总额：<b>18,797.8</b>万元</p>
-				</div>
-			</div>
-		</div>
-	<!-- 	
-		<div class="index_notice">
-			<div class="w">
-				<div class="n_list clearfix">
-					<i></i>
-					<ul class="line">
-							<li><a href="#" title="">公告</a></li>
-							<li><a href="#" title="">爱益</a></li>
-							<li><a href="#" title="">爱家</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>  -->
-		
-		
-		<!--  轮播图片 -->
-		<script type="text/javascript">
-				$(document).ready(function(){
-					$('.flexslider').flexslider({
-						directionNav: true,
-						pauseOnAction: false
-					});
-				
-				$("#liHome").addClass("z_cur");
-			    $("#liFinancial").removeClass("z_cur");
-				$("#liBorrowing").removeClass("z_cur");
-				$("#liExclusive").removeClass("z_cur");
-				$("#liAboutUs").removeClass("z_cur");
-			});
-		</script>  
-		 <div id="projects" class="section-padding">
-        <div class="container">
+      <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/base.css"/>
+      <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+      <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+      <link rel="stylesheet" type="text/css" href="../static/css/nav.css">
+      <script src="../static/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="../static/css/jquery.skippr.css"/>
+      <script type="text/javascript" src="../static/js/jquery.skin.js"></script>
+      <script type="text/javascript" src="../static/js/index.js"></script>
+      <script src="https://code.jquery.com/jquery.min.js"></script>
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+      <script src="../static/js/jquery-2.2.3.min.js"></script>
+      <script src="../static/js/bootstrap.min.js"></script>
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+              var hm = document.createElement("script");
+              hm.src = "//hm.baidu.com/hm.js?cbe66539543f147f5b0ae378b18d911a";
+              var s = document.getElementsByTagName("script")[0];
+              s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
 
-            <div class="row" th:each="entity:${entity}">
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-project">
-                        <div class="project-preview">
-                            <a href=""><img src="../static/img/img-1.jpg" class="img-responsive" alt=""></a>
-                            <div class="project-meta">
-                                <div class="project-date">
-                                    <p th:text="${entity.createTime}"></p>
-                                </div>
-                                
-                                <div class="project-count">
-                                    <p th:text="${entity.id}"><i class="fa fa-money"></i> 238</p>
-                                    <p><i class="fa fa-jpy"></i> 20</p>
-                                    <p><i class="fa fa-plus-square"></i> 128</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-link">
-                            <h2 ><a href="" th:text="${entity.welfareTitle}"></a></h2>
-                            <p th:text="${entity.tag}"></p>
-                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-project">
-                        <div class="project-preview">
-                            <a href=""><img src="../static/img/img-2.jpg" class="img-responsive" alt=""></a>
-                            <div class="project-meta">
-                                <div class="project-date">
-                                    <p>June 28, 2013</p>
-                                </div>
-                                
-                                <div class="project-count">
-                                    <p><i class="fa fa-eye"></i> 238</p>
-                                    <p><i class="fa fa-comment"></i> 20</p>
-                                    <p><i class="fa fa-download"></i> 128</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-link">
-                            <h2><a href="">Expand - html5 template</a></h2>
-                            <p>HTML, CSS</p>
-                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-project">
-                        <div class="project-preview">
-                            <a href=""><img src="../static/img/img-3.jpg" class="img-responsive" alt=""></a>
-                            <div class="project-meta">
-                                <div class="project-date">
-                                    <p>June 28, 2013</p>
-                                </div>
-                                
-                                <div class="project-count">
-                                    <p><i class="fa fa-eye"></i> 238</p>
-                                    <p><i class="fa fa-comment"></i> 20</p>
-                                    <p><i class="fa fa-download"></i> 128</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-link">
-                            <h2><a href="">Icon - Landing page</a></h2>
-                            <p>HTML, CSS, Landing page</p>
-                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-project">
-                        <div class="project-preview">
-                            <a href=""><img src="../static/img/img-4.jpg" class="img-responsive" alt=""></a>
-                            <div class="project-meta">
-                                <div class="project-date">
-                                    <p>June 28, 2013</p>
-                                </div>
-                                
-                                <div class="project-count">
-                                    <p><i class="fa fa-eye"></i> 238</p>
-                                    <p><i class="fa fa-comment"></i> 20</p>
-                                    <p><i class="fa fa-download"></i> 128</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-link">
-                            <h2><a href="">Expand filter</a></h2>
-                            <p>WP Plugin</p>
-                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-project">
-                        <div class="project-preview">
-                            <a href=""><img src="../static/img/img-5.jpg" class="img-responsive" alt=""></a>
-                            <div class="project-meta">
-                                <div class="project-date">
-                                    <p>June 28, 2013</p>
-                                </div>
-                                
-                                <div class="project-count">
-                                    <p><i class="fa fa-eye"></i> 238</p>
-                                    <p><i class="fa fa-comment"></i> 20</p>
-                                    <p><i class="fa fa-download"></i> 128</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-link">
-                            <h2><a href="">Expand accordion</a></h2>
-                            <p>WP Plugin</p>
-                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-6">
-                    <div class="single-project">
-                        <div class="project-preview">
-                            <a href=""><img src="../static/img/img-6.jpg" class="img-responsive" alt=""></a>
-                            <div class="project-meta">
-                                <div class="project-date">
-                                    <p>June 28, 2013</p>
-                                </div>
-                                
-                                <div class="project-count">
-                                    <p><i class="fa fa-eye"></i> 238</p>
-                                    <p><i class="fa fa-comment"></i> 20</p>
-                                    <p><i class="fa fa-download"></i> 128</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="project-link">
-                            <h2><a href="">Beautiful paypal buttons</a></h2>
-                            <p>WP Plugin</p>
-                            <a href="" title="查看详情" class="project-detail"><i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <a href="" class="more-link">查看更多 <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-	
-	<div class="footer"> 
-		<div id="footer">
-		  <p><a href="#" target="_blank">爱益公益慈善基金会</a> | <a href="#" target="_blank">关于爱益</a> | <a href="#">About AI YI</a> | <a href=#>服务条款</a> | <a href="#">广告服务</a> | <a href="#" target="_blank">客服中心</a> </p>
-		  <p> <span class="ywzt">Copyright © 2018 - 2019 AIYI. All Rights Reserved.</span></p>
-		  <p><a rel="license" href="#" target="_blank">爱益 </a> 版权所有</p>
-		</div>
-		<div class="fr_sidebar">
-			<div class="wrap">
-			    <a href="javascript:void(0)" id="link_slideTop" class="sidetop" style="display: block;"><i></i></a>
-			</div>
-		</div>
-		<script type="text/javascript">
-		$(function() {
-			$(window).scroll(function(){
-		      var top=$(window).scrollTop();
-		      if(top>50){
-		        $("#link_slideTop").fadeIn();
-		      }else{
-		        $("#link_slideTop").fadeOut();
-		      }
-		    });
-		    //点击返回头部效果
-		    $("#link_slideTop").click(function(){
-		    	$("html,body").animate({scrollTop:0});
-		    });
-		});
-		</script>
-	 </div>
-	 
-</div> 
-</body>
+   </head>
+  <body>
+  <div class="g_head">
+      <div class="h_top">
+          <div class="w clearfix">
+              <ul class="h_fr clearfix">
+                  <li class="h_tel"><i></i>您好，欢迎参与爱益平台</li>
+                  <li class="to_log" id="login_li_l"><a href="/login" title="登录">登录</a></li>
+                  <li class="to_reg" id="login_li_r"><a href="/logout" title="注销">注销</a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="h_nav">
+          <div class="w clearfix">
+              <h1 class="logo fl"><a href="/" title="爱益平台">爱益平台</a></h1>
+              <div class="nav fr">
+                  <ul class="clearfix">
+                      <li id="index" class="z_cur"><i></i><a href="/" title="爱心首页">公益首页</a></li>
+                      <li id="listinfo"><i></i><a href="/" title="公益活动">公益活动</a></li>
+                      <li id="personal"><i></i><a href="" title="个人中心">个人中心</a></li>
+                      <li id="help"><a href="../static/person/help.jsp">我要求助</a></li>
+
+                   <!--   <li><a href="../static/person/index.jsp">公益首页</a></li>
+                      <li><a href="../static/person/listinfo.jsp">公益活动</a></li>
+                      <li><a href="../static/person/personal.jsp">个人中心</a></li>
+                      <li><a href="../static/person/help.jsp">我要求助</a></li>
+                      <li><a href="../static/admin/allproject.jsp">管理活动</a></li>-->
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <!--头部显示结束-->
+
+  <!--轮播图开始-->
+  <div class="container">
+      <!-- 轮播图部分 -->
+      <div class="row col-xs-10 col-xs-offset-1">
+          <div class="carousel slide" id="slidershow" data-ride="carousel">
+              <!-- 设置图片轮播的顺序 -->
+              <ol class="carousel-indicators">
+                  <li class="active" data-target="#slidershow" data-slide-to="0"></li>
+                  <li data-target="#slidershow" data-slide-to="1"></li>
+                  <li data-target="#slidershow" data-slide-to="2"></li>
+              </ol>
+              <!-- 设置轮播图片 -->
+              <div class="carousel-inner">
+                  <div class="item active">
+                      <a href="##"><img src="../static/img/c01.jpg" alt=""></a>
+                      <div class="carousel-caption">
+                          <h4>
+                              <!--<a class="btn btn-success btn-sm">专题</a>-->
+                              <span>贫困孤儿助养</span>
+                          </h4>
+                      </div>
+
+                  </div>
+                  <div class="item">
+                      <a href="##"><img src="../static/img/c02.jpg" alt=""></a>
+                      <div class="carousel-caption">
+                          <h4>
+                            <!--  <a class="btn btn-danger btn-sm">活动</a>-->
+                              <span>99公益日 一起爱</span>
+                          </h4>
+                      </div>
+                  </div>
+                  <div class="item">
+                      <a href="##"><img src="../static/img/c04.jpg" alt=""></a>
+                      <div class="carousel-caption">
+                          <h4>
+                            <!--  <a class="btn btn-danger btn-sm">活动</a>-->
+                              <span>免费午餐，小善大爱</span>
+                          </h4>
+                      </div>
+                  </div>
+              </div>
+              <!-- 设置轮播图片控制器 -->
+              <a class="left carousel-control" href="#slidershow" data-slide="prev">
+                  <span class="fa fa-left fa-angle-left fa-3x"></span>
+              </a>
+              <a class="right carousel-control" href="#slidershow" data-slide="next">
+                  <span class="fa fa-right fa-angle-right fa-3x"></span>
+              </a>
+          </div>
+      </div>
+      <!--轮播图结束-->
+
+
+   <!-- 项目信息 显示最新10条数据-->
+      <div class="row">
+          <div class="col-xs-10 col-xs-offset-1">
+              <div class="col-xs-8" >
+                  <!-- 信息列表 -->
+                  <div  calss="WelfareList">
+                        <div class="media">
+                          <h4 class="media-heading h3 text-a">贵州遵义:82岁愚公曾带村民绝壁上凿出生命渠</h4>
+                          <a class="pull-left fixedimg" href="#">
+                              <img class="media-object" src="../static/img/img-5.jpg">
+                          </a>
+                          <div class="media-body">
+                              <div class="descript">
+                                  贵州遵义有一条长7200米的生命渠，以潺潺渠水润泽了当地1200多人，
+                                  被老百姓亲切地称为“大发渠”，因为修建这条生命之渠的领头人正是草王坝老支书黄大发。
+                              </div>
+                              <br>
+                              <p class="text-muted small">
+                                  <span class="date">2017-04-21 11:53:07更新</span>
+                              </p>
+                              <p class="text-right text-muted lead1">
+                                  <i class="fa fa-commenting-o fa-fw"></i>
+                                  <a class="text-muted">详情</a>
+                              </p>
+                          </div>
+                      </div>
+                      <!-- 重复重复 -->
+                      <div class="media">
+                          <h4 class="media-heading h3 text-a">贵州遵义:82岁愚公曾带村民绝壁上凿出生命渠</h4>
+                          <a class="pull-left fixedimg" href="#">
+                              <img class="media-object" src="../static/img/img-5.jpg">
+                          </a>
+                          <div class="media-body">
+                              <div class="descript">
+                                  贵州遵义有一条长7200米的生命渠，以潺潺渠水润泽了当地1200多人，
+                                  被老百姓亲切地称为“大发渠”，因为修建这条生命之渠的领头人正是草王坝老支书黄大发。
+                              </div>
+                              <br>
+                              <p class="text-muted small">
+                                  <span class="date">2017-04-21 11:53:07更新</span>
+                              </p>
+                              <p class="text-right text-muted lead1">
+                                  <i class="fa fa-commenting-o fa-fw"></i>
+                                  <a class="text-muted">详情</a>
+                              </p>
+                          </div>
+                      </div>
+
+                  </div>
+                  <!-- 重复重复 -->
+              </div>
+
+              <!--累计捐献数据-->
+              <div class="col-xs-4">
+                  <div class="list2">
+                      <div class="imgtop"></div>
+                      <div class="imgbody">
+                          <dl>
+                              <dt>历史善款总额：</dt>
+                              <dd><span>1,788,172</span>元</dd>
+                          </dl>
+                          <dl>
+                              <dt>历史爱心总人次：</dt>
+                              <dd><span>105,380</span>人次</dd>
+                          </dl>
+                      </div>
+                  </div>
+                  <div class="list3">
+                      <div class="title">
+                          <span class="listtitle h2">乐捐</span>
+                          <span class="more pull-right">更多</span>
+                      </div>
+                      <div class="body">
+                          <img src="../static/img/img-1.jpg">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!--版权界面开始-->
+  <footer >
+      <div class="layout partner">
+          <div class="hd"><h2>联系我们</h2></div>
+          <div class="bd" bosszone="media">
+              <style type="text/css">
+                  .partner .hd{ border-bottom:1px solid #e1e1e1; padding-bottom:20px;}
+                  .partner .bd{ border-top:1px solid #fff; padding:0;}
+                  .partner h3{color: #222222; font-family: "微软雅黑","黑体"; font-size: 14px; font-weight: normal; height:20px; line-height:20px;padding-top:10px;padding-bottom:10px;}
+                  .style123{clear:both;padding-top:10px;padding-bottom:10px;line-height:20px;color: #222222; font-family: "微软雅黑","黑体"; font-size: 12px; font-weight: normal;}
+              </style>
+              <div class="style123">
+                  <p>公益项目咨询：aiyi@163.com|公益项目合作：aiyi@163.com</p>
+                  <p>主办：爱益公益慈善基金会</p>
+                  <p><a>意见反馈</a>|<a>网友投诉</a></p>
+              </div>
+          </div>
+      </div>
+
+      <script>
+          var NavNoticeSiteName = ["sports","tech","games","cul","edu","fashion","house","auto","finance","ent"];
+      </script>
+      <style>
+          .tcopyright {width:960px;margin:0 auto;padding:8px 0;font-size:12px;line-height:28px;color:#333;text-align:center;overflow:hidden;clear:both;}
+          .tcopyright .en{font-family:Arial;}
+          .tcopyright a{color:#333;text-decoration: none;}
+          .tcopyright a:hover{color:#bd0a01;text-decoration: underline;}
+      </style>
+      <div id="tcopyright" class="tcopyright" bosszone="footer" role="contentinfo">
+          <p><a href="#" target="_blank">爱益公益慈善基金会</a> | <a href="#" target="_blank">关于爱益</a> | <a href="#">About AI YI</a> | <a href=#>服务条款</a> | <a href="#">广告服务</a> | <a href="#" target="_blank">客服中心</a> </p>
+          <p> <span class="ywzt">Copyright © 2018 - 2019 AIYI. All Rights Reserved.</span></p>
+          <p><a rel="license" href="#" target="_blank">爱益 </a> 版权所有</p>
+      </div>
+  </footer>
+  <!-- 版权页面片 结束 -->
+  </body>
 </html>

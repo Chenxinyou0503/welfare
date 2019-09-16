@@ -59,7 +59,7 @@ i.t2{ background-position:-126px -346px;}
 .hd_det{ margin-bottom:22px; background:#f8f8f8;}
 .l_det{ width:900px; border-right:#e8e8e8 solid 1px; background:#fff;}
 .l_det_tit{ padding:20px 20px 20px 28px; display:table-cell; width:300px; height:300px;}
-.l_det_tit p{ display:table-cell; *display:block; *padding-top:102px; width:300px; height:300px; font-size:20px;  *height:198px; color:#878787; text-align:center; background:#f6f6f6; vertical-align:middle; } 
+.l_det_tit p{ display:table-cell; *display:block; *padding-top:102px; width:300px; height:300px; font-size:20px;  *height:198px; color:#878787; text-align:center; background:#f6f6f6; vertical-align:middle; }
 .l_det_tit p span{ display:block; color:#FD9C28; margin-bottom:-6px; margin-top:-8px;}
 .l_det_tit p span em{ font-size:126px;}
 .l_det_main{ width:524px; padding:20px 28px 20px 0;}
@@ -275,7 +275,7 @@ li.l_m_btn .join_btn{ width:250px; height:40px; line-height:40px; font-size:18px
 .loginInfo li{ margin-bottom:15px;}
 .inpu,.int{ float:left; display:inline; position:relative;}
 .inpu{ height:43px; border:#e5e6e6 solid 1px; border-radius:2px;  }
-.inpu i{ position:absolute; left:13px; top:12px; width:20px; height:20px; background:url(images/ico.png) no-repeat;}
+.inpu i{ position:absolute; left:13px; top:12px; width:20px; height:20px; background:url(../img/ico.png) no-repeat;}
 .inpu input{ *float:left; width:344px; height:43px; font-size:14px; text-indent:46px; color:#9b9b9b; line-height:43px; border:none; }
 .inpu input:focus{ border-color:#6ADAFF;}
 .inpu.error{ border-color:#e95050;}
@@ -283,14 +283,14 @@ li.l_m_btn .join_btn{ width:250px; height:40px; line-height:40px; font-size:18px
 .int{ line-height:45px; margin-left:22px; font-size:14px}
 .iError{ color:#e95050}
 .iNote{ color:#17bd9b;}
-.iNote i{ display:inline-block; width:20px; height:20px; background:url(images/ico.png) -280px 0 no-repeat; vertical-align:-4px; *vertical-align:middle; margin-right:5px}
+.iNote i{ display:inline-block; width:20px; height:20px; background:url(../img/ico.png) -280px 0 no-repeat; vertical-align:-4px; *vertical-align:middle; margin-right:5px}
 
 i.icoUser{ background-position:-300px 0;}
 i.icoPwd{ background-position:-320px 0; height:22px;}
 i.icoIphone{background-position:-380px 0; height:24px; top:11px;}
 .nextline{ width:346px; font-size:14px; line-height:19px; margin-top:38px; margin-bottom:17px  }
 .nextline label{ position:relative; float:left; display:inline-block; cursor:pointer; color:#9b9b9b; }
-.nextline label b{ float:left; display:inline-block; width:20px; height:20px; background:url(images/ico.png) -360px 2px no-repeat; margin-right:11px;}
+.nextline label b{ float:left; display:inline-block; width:20px; height:20px; background:url(../img/ico.png) -360px 2px no-repeat; margin-right:11px;}
 .nextline label a{ color:#4F6197;}
 label.z_sel b{ width:24px; height:23px; background-position:-364px -66px; margin-right:7px; margin-top:-5px; }
 .nextline span{ float:right; }
@@ -301,9 +301,9 @@ a.txtgrey { color:#bbb;}
 .fontLast{ background:#92bee1;}
 .tologin{ width:346px; text-align:center;}
 .tologin p{ display:block; margin-top:16px; line-height:19px; font-size:13px; color:#9b9b9b; overflow:hidden;}
-.tologin p i{ display:inline-block; width:16px; height:16px; background:url(images/ico.png)  -342px -2px no-repeat; vertical-align:-2px; *vertical-align:middle; margin-right:5px}
+.tologin p i{ display:inline-block; width:16px; height:16px; background:url(../img/ico.png)  -342px -2px no-repeat; vertical-align:-2px; *vertical-align:middle; margin-right:5px}
 .log_boder{ width:1px; height:322px; font-size:0; overflow:hidden; background:#e3e3e3; margin:74px 0;}
-.log_fr{ margin:74px 0; width:357px; text-align:center;}
+.log_fr{margin:74px 0;width:357px;text-align:center;}
 .log_fr p{ color:#9b9b9b; margin-top:15px; margin-bottom:25px; display:block; font-size:14px; line-height:19px;}
 .log_fr p a:hover{ text-decoration:underline;}
 a.l_toreg{ color:#4F6197;}
@@ -344,7 +344,7 @@ a.l_toreg em{  font-weight:400; font-size:12px}
 .xf_wylc_tbsousou{ float:right;}
 .xf_wylc_tbssinput{ position:relative;}
 .xf_wylc_tbssinput input{ border:#e8e8e8 solid 1px; border-radius:14px; height:28px; line-height:28px; background:#fff; width:250px; font-size:14px; padding:0 15px; color:#999;}
-.xf_wylc_tbssinput a{ display:inline-block; width:17px; height:18px; background:url(images/ico.png) -238px -137px no-repeat; text-indent:-3000px; position:absolute; right:15px; top:6px;}
+.xf_wylc_tbssinput a{ display:inline-block; width:17px; height:18px; background:url(../img/ico.png) -238px -137px no-repeat; text-indent:-3000px; position:absolute; right:15px; top:6px;}
 
 /**20151202 yangweiya**/
 .g_cast .det_top,.g_cast .det_top h2{ background:#e9b247;}
@@ -354,7 +354,7 @@ a.l_toreg em{  font-weight:400; font-size:12px}
 .g_cast .xf_c_idx_4_proWrap{ background:#f9e8c7;}
 .g_cast .xf_c_idx_4_proPer{ background:#e9b247;}
 .g_cast .cal a{ background:#e6e6e6;}
-.g_cast .jian_shao.not i{ background-position:-637px 0;} 
+.g_cast .jian_shao.not i{ background-position:-637px 0;}
 .g_cast .zeng_jia.not i{ background-position:-654px 0;}
 .g_cast .jian_shao i{ background-position:-600px 0;}
 .g_cast .zeng_jia i{ background-position:-617px 0;}
@@ -388,9 +388,9 @@ a.l_toreg em{  font-weight:400; font-size:12px}
 .castlist li{ position:relative; float:left; margin:0 24px; width:282px}
 .casthd{ position:absolute; left:0; top:0;}
 .clitxt{ position:absolute; left:0; top:33px; min-width:250px; *width:250px; border:#ff7f00 solid 1px; border-radius:3px; height:28px; background:#fff; color:#ff942b; line-height:28px; text-align:center; font-size:12px; display:none; }
-.clitxt i{ position:absolute; width:5px; height:4px; background:url(images/limit_top.png) no-repeat; top:-4px; left:15px;}
+.clitxt i{ position:absolute; width:5px; height:4px; background:url(../img/limit_top.png) no-repeat; top:-4px; left:15px;}
 .casthd:hover .clitxt{ display:block;}
-.climit{ display:inline-block; width:85px; height:29px; background:url(images/limit.png) no-repeat;}
+.climit{ display:inline-block; width:85px; height:29px; background:url(../img/limit.png) no-repeat;}
 .castbd{ padding:30px 40px; background:#f7f7f7;}
 .castbd h4{ font-size:24px; line-height:29px; text-align:center; color:#596273; margin-bottom:18px;}
 .cyiel{ text-align:center; margin-bottom:12px}
@@ -403,7 +403,7 @@ a.l_toreg em{  font-weight:400; font-size:12px}
 .atprice dd,.atweek dd{ font-size:24px; text-align:right}
 .castbtn{ height:39px}
 .castbtn a{ width:100%;}
-.castflows{ width:1010px; margin:24px auto 36px; height:295px; background:url(images/castflows.png) no-repeat;}
+.castflows{ width:1010px; margin:24px auto 36px; height:295px; background:url(../img/castflows.png) no-repeat;}
 .c_form_x{ border:#f4f4f4 solid 1px;}
 .ctag_1{ padding:38px 38px 24px;}
 .c_b_box{ text-align:left; padding:20px 0;}
@@ -412,19 +412,19 @@ a.l_toreg em{  font-weight:400; font-size:12px}
 .cast_ft .prev1{ left:0;}
 .cast_ft .next1{ right:0;}
 .d_item{ position:relative;}
-li.limitpr{ position:absolute; left:0; top:0; background:url(images/limitpr.png) no-repeat; width:72px; height:72px;}
+li.limitpr{ position:absolute; left:0; top:0; background:url(../img/limitpr.png) no-repeat; width:72px; height:72px;}
 
 .l_det_tit{ position:relative;}
 .l_det_tit .pro_plus{ right:20px; top:20px}
-.new_hand{ position:absolute; z-index:10000; left:0px; top:0; width:60px; height:60px; background:url(images/ico.png) -475px -559px no-repeat;}
+.new_hand{ position:absolute; z-index:10000; left:0px; top:0; width:60px; height:60px; background:url(../img/ico.png) -475px -559px no-repeat;}
 .l_det_tit .new_hand{ left:28px; top:20px;}
 .fr_sidebar{ position:fixed; right:25px; bottom:25px;   width:40px; z-index:100001; -webkit-transition:all .3s ease; -moz-transition:all .3s ease; -o-transition:all .3s ease; transition:all .3s ease;}
 .fr_sidebar .wrap{}
 .fr_sidebar a{ display:block; width:60px; height:60px; background:#dadbdb; text-align:center; color:#fff; margin:2px 0; border-radius:2px;}
 .fr_sidebar a i{ display:block;}
-.sidehandset i{ width:28px; height:28px; background:url(images/handset.png) center no-repeat; padding:16px;}
-.sidephone i{ width:20px; height:32px; background:url(images/phone.png) center no-repeat; padding:14px 20px;}
-.sidetop i{ width:22px; height:14px; background:url(images/top.png) center no-repeat; padding:23px 19px}
+.sidehandset i{ width:28px; height:28px; background:url(../img/handset.png) center no-repeat; padding:16px;}
+.sidephone i{ width:20px; height:32px; background:url(../img/phone.png) center no-repeat; padding:14px 20px;}
+.sidetop i{ width:22px; height:14px; background:url(../img/top.png) center no-repeat; padding:23px 19px}
 .r_det{ padding:66px 30px; width:236px;}
 .r_det dl dt{ font-size:16px; padding-bottom:20px; margin-bottom:12px; border-bottom:#dedede solid 1px}
 .r_det dt em{ margin:0 2px}

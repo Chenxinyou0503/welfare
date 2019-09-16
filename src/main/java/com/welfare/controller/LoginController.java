@@ -28,10 +28,18 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+   /* 登录界面*/
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login() {
 
         return new ModelAndView("login");
+    }
+
+   /* 注册界面*/
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public ModelAndView register() {
+
+        return new ModelAndView("register");
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -39,20 +47,24 @@ public class LoginController {
     public String login(HttpServletResponse res, String username, String password) {
         JSONObject jsonObject = new JSONObject();
         if (StringUtils.isEmpty(username)) {
-            jsonObject.put("code", "用户名不能为空");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "用户名不能为空");
             return jsonObject.toString();
         }
         if (StringUtils.isEmpty(password)) {
-            jsonObject.put("code", "密码不能为空");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "密码不能为空");
             return jsonObject.toString();
         }
         UserEntity entity = userService.login(username, password);
         if (StringUtils.isEmpty(entity)) {
-            jsonObject.put("code", "用户不存在");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "用户不存在");
             return jsonObject.toString();
         }
         if (!MD5Util.verfityMd5(password, entity.getPassword())) {
-            jsonObject.put("code", "密码不正确");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "密码不正确");
             return jsonObject.toString();
         }
         try {
@@ -63,7 +75,8 @@ public class LoginController {
         if (entity.getRole().equalsIgnoreCase("2")) {
             jsonObject.put("code", "ADMIN");
         }
-        jsonObject.put("code", "SUCCESS");
+        jsonObject.put("message", "SUCCESS");
+        jsonObject.put("code", "2");
         return jsonObject.toString();
     }
 
@@ -72,19 +85,23 @@ public class LoginController {
     public String register(String name, String password, String phone) {
         JSONObject jsonObject = new JSONObject();
         if (StringUtils.isEmpty(name)) {
-            jsonObject.put("code", "用户名不能为空");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "用户名不能为空");
             return jsonObject.toString();
         }
         UserEntity entity = userService.queryOne(name);
         if (!StringUtils.isEmpty(entity)) {
-            jsonObject.put("code", "用户名已存在");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "用户名已存在");
             return jsonObject.toString();
         }
         String result = userService.register(name, password, phone);
         if (result.equalsIgnoreCase("SUCCESS")) {
-            jsonObject.put("code", result);
+            jsonObject.put("code", "2");
+            jsonObject.put("message", result);
         } else {
-            jsonObject.put("code", "error");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "error");
         }
         return jsonObject.toString();
     }
@@ -93,19 +110,23 @@ public class LoginController {
     public String update(String name, String password,String newPassword) {
         JSONObject jsonObject = new JSONObject();
         if (StringUtils.isEmpty(name)) {
-            jsonObject.put("code", "用户名不能为空");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "用户名不能为空");
             return jsonObject.toString();
         }
         UserEntity entity = userService.queryOne(name);
         if (StringUtils.isEmpty(entity)) {
-            jsonObject.put("code", "用户名不存在");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "用户名不存在");
             return jsonObject.toString();
         }
         String result = userService.updatePassword(name, password, newPassword);
         if (result.equalsIgnoreCase("SUCCESS")) {
-            jsonObject.put("code", result);
+            jsonObject.put("code", "2");
+            jsonObject.put("message", result);
         } else {
-            jsonObject.put("code", "error");
+            jsonObject.put("code", "1");
+            jsonObject.put("message", "error");
         }
         return jsonObject.toString();
     }

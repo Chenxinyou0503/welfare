@@ -4,10 +4,9 @@
 	<link rel="stylesheet" style="css/text" href="../static/css/base.css">
 	<link rel="stylesheet" style="css/text" href="../static/css/colu.css">
 	<script src="https://code.jquery.com/jquery.min.js"></script>
-	<title>登录</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
+	<script type="text/javascript" src="../static/js/common.js"></script>
+	<title>注册</title>
 	<script>
         var _hmt = _hmt || [];
         (function() {
@@ -41,13 +40,25 @@
 							<span class="iNote xf_register_intext3 hide"><i></i></span> <span id="s_password" class="iError "></span>
 						</div>
 					</li>
-
-					<li>
-						<div class="nextline clearfix">
-							<a href="/loginAndRegister/resetPassword?theme=tongyirong" title="忘记密码" target="" class="txtdec">忘记密码</a>
+					<li class="clearfix">
+						<div class="inpu" id="DivPwd2">
+							<i class="icoPwd"></i> <input type="password" id="password2" name="password2" value="" placeholder="请再次输入密码">
+						</div>
+						<div class="int">
+							<span class="iNote xf_register_intext3 hide"><i></i></span> <span id="s_password2" class="iError "></span>
 						</div>
 					</li>
-					<li class="tologin"><input type="button" onclick="login()" name="" value="立即登录" class="fontBtn">
+					<li class="clearfix">
+						<div class="inpu" id="DivMobile">
+							<i class="icoIphone"></i>
+							<input type="text" id="mobile" name="mobile" value="" maxlength="20" onkeyup="value=value.replace(/[^\d\.]/g, '').replace(/(\.\d{2}).*/g, '$1')" placeholder="请输入您的手机号码">
+						</div>
+						<div class="int">
+							<span class="iNote xf_register_intext3 hide"></span>
+							<span id="s_mobile" class="iError "></span>
+						</div>
+					</li>
+					<li class="tologin"><input type="button" onclick="register()" name="" value="立即注册" class="fontBtn">
 						<p>
 							<i></i>您的信息已使用SSL加密技术，数据传输安全
 						</p></li>
@@ -56,9 +67,9 @@
 			</div>
 			<div class="log_boder fl"></div>
 			<div class="log_fr fl">
-				<p class="l_f_top">还没有账户？</p>
+				<p class="l_f_top">已有账户</p>
 				<p class="l_f_bot">
-					<a href="/register" title="" class="l_toreg">立即注册 <em>&gt;&gt;</em></a>
+					<a href="/login" title="" class="l_toreg">立即登录 <em>&gt;&gt;</em></a>
 				</p>
 			</div>
 		</div>
@@ -72,7 +83,13 @@
         }
     })
 
-      $(document).ready(function () {
+    $(document).keyup(function (event) {
+        if (event.keyCode == 13) {
+            login();
+        }
+    });
+
+    $(document).ready(function () {
         if (getCookies("cookieUserName") != null) {
             $("#name").val(getCookies("cookieUserName"));
         }
@@ -96,10 +113,13 @@
         }
     }
 
-    function login() {
+    function register() {
         var name = $("#name").val();
         var password = $("#password").val();
+        var password2 = $("#password2").val();
+        var mobile = $("#mobile").val();
 
+		/*用户名*/
         if (name == '') {
             $("#nameError").addClass("error");
             $("#s_userName").show();
@@ -107,6 +127,7 @@
 
             $("#DivName").removeClass("inpu");
             $("#DivName").addClass("inpu error");
+
             return;
         } else {
             $("#nameError").removeClass("error");
@@ -116,6 +137,7 @@
             $("#DivName").addClass("inpu");
         }
 
+		/*密码*/
         if (password == '') {
             $("#pwdError").addClass("error");
             $("#s_password").show();
@@ -132,6 +154,42 @@
             $("#DivName").addClass("inpu");
         }
 
+        /*再次输入密码*/
+        if (password2 == '') {
+            $("#pwdError2").addClass("error");
+            $("#s_password2").show();
+            $("#s_password2").html("请再次输入密码");
+
+            $("#DivPwd2").removeClass("inpu");
+            $("#DivPwd2").addClass("inpu error");
+            return;
+        } else {
+            $("#pwdError2").removeClass("error");
+            $("#s_password2").hide();
+
+            $("#DivName2").removeClass("inpu error");
+            $("#DivName2").addClass("inpu");
+        }
+
+		if(password2 !== password){
+            alert("两次密码不一致");
+            return;
+		}
+
+        if (mobile == '') {
+            alert("请输入手机号码");
+            $("#s_mobile").show().html("请输入手机号码");
+            $("#DivMobile").addClass("error");
+            return;
+        }else if (!mobile.isMobileNum()) {
+            alert("请输入正确的手机号码");
+            $("#s_mobile").show().html("请输入正确的手机号码");
+            $("#DivMobile").addClass("error");
+            return;
+        }else{
+            $("#s_mobile").hide().html("");
+            $("#DivMobile").removeClass("error");
+        }
 
         if ($("#label_login").hasClass("z_sel")) {
             //存cookie的键(取cookie里的用户姓名用)
@@ -144,28 +202,29 @@
         }
 
         $.ajax({
-            data: {username: name, password: password},
+            data: {name: name, password: password,phone:mobile},
             type: 'POST',
             dataType: 'json',
-            url: '/login',
+            url: '/register',
             error: function (data) {
                 alert("网络异常，请重试!");
                 location.reload();
             },
             success: function (data) {
-				if(data.code == 1){
+
+                if(data.code == 1){
                     alert(data.message);
                     location.reload();
-				}else if(data.code == 2){
-                    window.location.href = '/';
-				}
+                }else if (data.code = 2){
+                    window.location.href = "/login";
+                }
             }
         });
     }
     /**
      * 登录返回结果
      */
-   /* function loginResult(data) {
+    /*function loginResult(data) {
         if (data.errorInfo.code >= 0) {
             if (data.accountCheckMap.code == 4) {
                 if (confirm("去开通存管账户？")) {
@@ -212,8 +271,11 @@
             }
 
         }
-    }
-*/
+    }*/
+
+
 </script>
+
+
 </div></body></html>
 

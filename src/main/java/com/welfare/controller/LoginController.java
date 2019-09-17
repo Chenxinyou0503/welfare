@@ -42,6 +42,12 @@ public class LoginController {
         return new ModelAndView("register");
     }
 
+    /* 忘记密码界面*/
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.GET)
+    public ModelAndView updatePassword() {
+        return new ModelAndView("updatePassword");
+    }
+
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @ResponseBody
     public String login(HttpServletResponse res, String username, String password) {
@@ -107,7 +113,7 @@ public class LoginController {
     }
     @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
     @ResponseBody
-    public String update(String name, String password,String newPassword) {
+    public String updatePassword(String name, String password,String phone) {
         JSONObject jsonObject = new JSONObject();
         if (StringUtils.isEmpty(name)) {
             jsonObject.put("code", "1");
@@ -120,13 +126,13 @@ public class LoginController {
             jsonObject.put("message", "用户名不存在");
             return jsonObject.toString();
         }
-        String result = userService.updatePassword(name, password, newPassword);
+        String result = userService.updatePassword(name, password, phone);
         if (result.equalsIgnoreCase("SUCCESS")) {
             jsonObject.put("code", "2");
             jsonObject.put("message", result);
         } else {
-            jsonObject.put("code", "1");
             jsonObject.put("message", "error");
+            jsonObject.put("code", "1");
         }
         return jsonObject.toString();
     }

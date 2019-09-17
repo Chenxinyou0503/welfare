@@ -64,15 +64,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String updatePassword(String username, String password, String newPassword) {
+    public String updatePassword(String username, String password, String phone) {
         String md5 = MD5Util.getMD5(password);
-        UserEntity param = new UserEntity();
-        param.setUsername(username);
-        UserEntity entity = userDao.selectOne(param);
-        if (md5.equals(entity.getPassword())) {
-            String md5New = MD5Util.getMD5(newPassword);
-            entity.setPassword(md5New);
-            userDao.updatePassword(entity.getId(), md5New);
+       int count = userDao.updatePassword(username, md5,phone);
+        if (count == 1) {
             return "SUCCESS";
         }
         return "error";

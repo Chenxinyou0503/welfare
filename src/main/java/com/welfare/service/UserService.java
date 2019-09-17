@@ -38,10 +38,10 @@ public interface UserService {
      *
      * @param username
      * @param password
-     * @param newPassword
+     * @param phone
      * @return
      */
-    public String updatePassword(String username, String password, String newPassword);
+    public String updatePassword(String username, String password, String phone);
 
     /**
      * 修改用户信息

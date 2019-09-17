@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="../static/">
-    <title>主页</title>
+    <title>首页</title>
     <link href="../static/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css">
  	<link rel="stylesheet" type="text/css" href="../static/css/index.css">

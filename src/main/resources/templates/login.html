@@ -162,58 +162,7 @@
             }
         });
     }
-    /**
-     * 登录返回结果
-     */
-   /* function loginResult(data) {
-        if (data.errorInfo.code >= 0) {
-            if (data.accountCheckMap.code == 4) {
-                if (confirm("去开通存管账户？")) {
-                    window.location.href = "/loginAndRegister/chooseIdentity";
-                } else {
-                    window.location.href = '/account/home';
-                }
-            } else {
-                window.location.href = '/account/home';
-            }
-        } else {
-            debugger;
-            switch (data.errorInfo.code) {
-                case -1:
-                    $("#s_userName").show();
-                    $("#s_userName").html(data.errorInfo.msg);
-                    refreshCaptcha();
-                    break;
-                case -2:
-                    $("#s_password").show();
-                    $("#s_password").html(data.errorInfo.msg);
-                    refreshCaptcha();
-                    break;
-                case -3:
-                    $("#s_randomId").show();
-                    $("#s_randomId").html(data.errorInfo.msg);
-                    refreshCaptcha();
-                    break;
-                case -4:
-                    $("#s_mobile").show().html(data.errorInfo.msg);
-                    refreshCaptcha();
-                    break;
-                case -5:
-                    alert(data.errorInfo.msg);
-                    refreshCaptcha();
-                    break;
-                case -11:
-                    if(confirm(data.errorInfo.msg)){
-                        login(true);
-                    }
-                    break;
-                    defalut:
-                        break;
-            }
-
-        }
-    }
-*/
+  
 </script>
 </div></body></html>
 
